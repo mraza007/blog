@@ -1,0 +1,51 @@
+# Site settings
+title_left    : ""
+title_right   : "Muhammad" # default: ""
+description   : "Personal Blog where I write about things I learn or discover."
+keywords      : "github, theme, free, download, SEO, blog, web, javascript, programming, stackoverflow, python"
+url           : "http://muhammadraza.me" # site url
+baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
+cover         : "" # image uri like logo/cover image for site seo
+
+google_analytics  : "UA-123408808-1"
+twitter_username  : "muhammad_o7"
+comments_enabled  : false # if enabled (set to true), please provide your disqus_username
+disqus_shortname  : muhammadraza-me
+postshare_enabled : true
+
+# Build settings
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : rouge
+
+
+
+source      : ./
+destination : ./_site
+excerpt_separator: ""
+# Sass configuration
+sass:
+  sass_dir  : assets/scss
+  style     : compressed # expanded
+
+# Author settings
+author:
+  name     : "Muhammad Raza"
+
+plugins:
+  - jekyll-sitemap
+  - bourbon
+  - jekyll-paginate
+
+
+# navbar pages
+navbar:
+  - slug : work
+    title: Work
+  - slug : blog
+    title: Blog
+  - slug : kb
+    title: KB
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "script"]
+

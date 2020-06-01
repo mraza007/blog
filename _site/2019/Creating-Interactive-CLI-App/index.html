@@ -1,0 +1,104 @@
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta name="apple-mobile-web-app-capable" content="yes"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title> Creating Interactive CLI App | Muhammad </title> <meta name="description" content=" In this post we will be using PyInquirer Library to create an interactive cli app. "> <meta name="keywords" content="python cli apps commandling pyinquirer"> <meta name="HandheldFriendly" content="True"> <meta name="MobileOptimized" content="320"> <!-- Social: Facebook / Open Graph --> <meta property="og:type" content="article"> <meta property="article:author" content="Muhammad Raza"> <meta property="article:section" content=""> <meta property="article:tag" content="python cli apps commandling pyinquirer"> <meta property="article:published_time" content="2019-03-21 00:00:00 -0400"> <meta property="og:url" content="http://localhost:4000/2019/Creating-Interactive-CLI-App/"> <meta property="og:title" content=" Creating Interactive CLI App | Muhammad "> <meta property="og:image" content="http://localhost:4000"> <meta property="og:description" content=" In this post we will be using PyInquirer Library to create an interactive cli app. "> <meta property="og:site_name" content="Muhammad Raza"> <meta property="og:locale" content="en_US"> <!-- Social: Twitter --> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:site" content="muhammad_o7"> <meta name="twitter:title" content=" Creating Interactive CLI App | Muhammad "> <meta name="twitter:description" content=" In this post we will be using PyInquirer Library to create an interactive cli app. "> <meta name="twitter:image:src" content="http://localhost:4000"> <!-- Social: Google+ / Schema.org --> <meta itemprop="name" content=" Creating Interactive CLI App | Muhammad "> <meta itemprop="description" content=" In this post we will be using PyInquirer Library to create an interactive cli app. "> <meta itemprop="image" content="http://localhost:4000"> <!-- Canonical link tag --> <link rel="canonical" href="http://localhost:4000/2019/Creating-Interactive-CLI-App/"> <link rel="alternate" type="application/rss+xml" title="Muhammad" href="http://localhost:4000/feed.xml"> <!-- rel prev and next --> <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css"> </head> <body> <main class="wrapper"> <header class="site-header"> <nav class="nav"> <div class="container"> <h1 class="logo"><a href="http://localhost:4000/"><span>Muhammad</span></a></h1> <ul class="navbar"> <li><a href="http://localhost:4000/work">Work</a></li> <li><a href="https://admiring-noyce-b382b7.netlify.app/">KB</a></li> <li><a href="http://localhost:4000/feed.xml" target="_blank">RSS</a></li> </ul> </div> </nav> </header> <article class="post container" itemscope itemtype="http://schema.org/BlogPosting"> <header class="post-header"> <p class="post-meta"><time datetime="2019-03-21T00:00:00-04:00" itemprop="datePublished">Mar 21, 2019</time></p> <h1 class="post-title" itemprop="name headline">Creating Interactive CLI App</h1> </header> <div class="post-content" itemprop="articleBody"> <p>In this blog post I will be walking you through the process of writing an interactive commandline app using Python. I have been a huge fan commandline apps and I love to create commandline apps since it helps me remain productive and makes navigation a lot easier compared to GUIs.</p> <p>Anyways we will be creating a simple commandline app that uses Yelp Api to find your favorite restaurant in your city.</p> <h3 id="lets-get-started">Let’s Get Started</h3> <ul> <li>In order to get started make sure you have <code class="highlighter-rouge">python3</code> installed.</li> <li>Now we will create a virtual enviroment using <code class="highlighter-rouge">pipenv</code> that will handle all our python dependencies.</li> </ul> <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">pipenv shell
+</span></code></pre></div></div> <p>If you don’t have pipenv installed you can <a href="https://pipenv.readthedocs.io/en/latest/">Click Here</a></p> <ul> <li>After activating the shell now we are going to install our packages. For this commandline app I will be using <a href="https://github.com/CITGuru/PyInquirer">PyInquirer</a>. Its a really cool package that helps you build interactive commandline apps.</li> </ul> <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">pipenv install PyInquirer
+</span></code></pre></div></div> <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">pipenv install prompt_toolkit==1.0.14
+</span></code></pre></div></div> <ul> <li> <p>Once we have installed <code class="highlighter-rouge">PyInquirer</code> now we will be installing python implemetation of the yelp fusion api <code class="highlighter-rouge">pipenv install yelpapi</code>. <a href="https://github.com/gfairchild/yelpapi">YelpApi(Python Implementation)</a></p> </li> <li> <p>Finally we have everything ready.</p> </li> </ul> <h3 id="lets-write-the-program">Let’s write the program.</h3> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">unicode_literals</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">emoji</span>
+<span class="kn">from</span> <span class="nn">PyInquirer</span> <span class="kn">import</span> <span class="n">style_from_dict</span><span class="p">,</span> <span class="n">Token</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">Separator</span>
+<span class="kn">from</span> <span class="nn">examples</span> <span class="kn">import</span> <span class="n">custom_style_2</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">termcolor</span> <span class="kn">import</span> <span class="n">colored</span>
+<span class="kn">from</span> <span class="nn">yelpapi</span> <span class="kn">import</span> <span class="n">YelpAPI</span>
+<span class="c1"># Api key from Yelp Developers
+</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'API_KEY'</span><span class="p">]</span>
+<span class="c1">## This allows you create prompts for the user.
+</span><span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">'type'</span><span class="p">:</span> <span class="s">'input'</span><span class="p">,</span>
+        <span class="s">'name'</span><span class="p">:</span> <span class="s">'food'</span><span class="p">,</span>
+        <span class="s">'message'</span><span class="p">:</span> <span class="n">emoji</span><span class="p">.</span><span class="n">emojize</span><span class="p">(</span><span class="s">'What are you looking to eat ? :sushi:,:pizza:,:hamburger:'</span><span class="p">),</span>
+
+
+    <span class="p">},</span>
+    <span class="c1">## Allows you have a list of choices 
+</span>    <span class="c1">## Furthermore you can refer to the documentation.
+</span>    <span class="p">{</span>
+        <span class="s">'type'</span><span class="p">:</span> <span class="s">'list'</span><span class="p">,</span>
+        <span class="s">'name'</span><span class="p">:</span> <span class="s">'city'</span><span class="p">,</span>
+        <span class="s">'message'</span><span class="p">:</span> <span class="s">'Choose your City'</span><span class="p">,</span>
+        <span class="s">'choices'</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s">"New York City"</span><span class="p">,</span>
+                <span class="s">"Los Angeles"</span><span class="p">,</span>
+                <span class="s">"Chicago"</span><span class="p">,</span>
+                <span class="s">"Houston"</span><span class="p">,</span>
+                <span class="s">"Philadelphia"</span><span class="p">,</span>
+                <span class="s">"Phoenix"</span><span class="p">,</span>
+                <span class="s">"San Antonio"</span><span class="p">,</span>
+                <span class="s">"San Diego"</span><span class="p">,</span>
+                <span class="s">"Dallas"</span><span class="p">,</span>
+                <span class="s">"San Jose"</span><span class="p">,</span>
+                <span class="s">"Austin"</span><span class="p">,</span>
+                <span class="s">"Jacksonville"</span><span class="p">,</span>
+                <span class="s">"San Francisco"</span><span class="p">,</span>
+                <span class="s">"Indianapolis"</span><span class="p">,</span>
+                <span class="s">"Columbus"</span><span class="p">,</span>
+                <span class="s">"Fort Worth"</span><span class="p">,</span>
+                <span class="s">"Charlotte"</span><span class="p">,</span>
+                <span class="s">"Detroit"</span><span class="p">,</span>
+                <span class="s">"El Paso"</span><span class="p">,</span>
+                <span class="s">"Seattle "</span><span class="p">,</span>
+                <span class="s">"Denver "</span><span class="p">,</span>
+                <span class="s">"Washington"</span><span class="p">,</span>
+                <span class="s">"Memphis"</span><span class="p">,</span>
+                <span class="s">"Boston "</span><span class="p">,</span>
+                <span class="s">"Nashville-Davidson"</span><span class="p">,</span>
+                <span class="s">"Baltimore"</span><span class="p">,</span>
+                <span class="s">"Not Listed"</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+
+<span class="p">]</span>
+<span class="c1">## This will allow you get the results from Yelp Api based on user's input.
+</span><span class="n">answers</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">custom_style_2</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="s">'city'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Not Listed'</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What</span><span class="se">\'</span><span class="s">s your city: "</span><span class="p">)</span>
+    <span class="n">search_results</span> <span class="o">=</span> <span class="n">yelp_api</span><span class="p">.</span><span class="n">search_query</span><span class="p">(</span>
+        <span class="n">term</span><span class="o">=</span><span class="n">answers</span><span class="p">[</span><span class="s">'food'</span><span class="p">],</span>
+        <span class="n">location</span><span class="o">=</span><span class="n">answers</span><span class="p">[</span><span class="s">'city'</span><span class="p">],</span>
+        <span class="n">sort_by</span><span class="o">=</span><span class="s">'rating'</span><span class="p">,</span>
+        <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Here are few restaurants I found '</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">nums</span> <span class="ow">in</span> <span class="n">search_results</span><span class="p">[</span><span class="s">'businesses'</span><span class="p">]:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'Name : '</span> <span class="o">+</span>
+                  <span class="n">colored</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="s">'name'</span><span class="p">],</span> <span class="s">'white'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s">'bold'</span><span class="p">])</span> <span class="o">+</span>
+                  <span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span>
+                  <span class="s">'Phone: '</span> <span class="o">+</span>
+                  <span class="n">colored</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="s">'phone'</span><span class="p">],</span> <span class="s">'green'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s">'bold'</span><span class="p">])</span> <span class="o">+</span>
+                  <span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span>
+                  <span class="s">'Address: '</span> <span class="o">+</span>
+                  <span class="n">colored</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="s">'location'</span><span class="p">][</span><span class="s">'address1'</span><span class="p">],</span><span class="s">'cyan'</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s">'bold'</span><span class="p">])</span> <span class="o">+</span>
+                  <span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span>
+                  <span class="n">colored</span><span class="p">(</span><span class="s">'Yelp url: '</span><span class="p">,</span><span class="s">'red'</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s">'bold'</span><span class="p">])</span> <span class="o">+</span>
+                  <span class="n">nums</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span>
+                  <span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">search_results</span> <span class="o">=</span> <span class="n">yelp_api</span><span class="p">.</span><span class="n">search_query</span><span class="p">(</span>
+        <span class="n">term</span><span class="o">=</span><span class="n">answers</span><span class="p">[</span><span class="s">'food'</span><span class="p">],</span>
+        <span class="n">location</span><span class="o">=</span><span class="n">answers</span><span class="p">[</span><span class="s">'city'</span><span class="p">],</span>
+        <span class="n">sort_by</span><span class="o">=</span><span class="s">'rating'</span><span class="p">,</span>
+        <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Here are few restaurants I found '</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">nums</span> <span class="ow">in</span> <span class="n">search_results</span><span class="p">[</span><span class="s">'businesses'</span><span class="p">]:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'Name : '</span> <span class="o">+</span>
+                  <span class="n">colored</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="s">'name'</span><span class="p">],</span> <span class="s">'white'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s">'bold'</span><span class="p">])</span> <span class="o">+</span>
+                  <span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span>
+                  <span class="s">'Phone: '</span> <span class="o">+</span>
+                  <span class="n">colored</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="s">'phone'</span><span class="p">],</span> <span class="s">'green'</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s">'bold'</span><span class="p">])</span> <span class="o">+</span>
+                  <span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span>
+                  <span class="s">'Address: '</span> <span class="o">+</span>
+                  <span class="n">colored</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="s">'location'</span><span class="p">][</span><span class="s">'address1'</span><span class="p">],</span><span class="s">'cyan'</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s">'bold'</span><span class="p">])</span> <span class="o">+</span>
+                  <span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span>
+                  <span class="n">colored</span><span class="p">(</span><span class="s">'Yelp url: '</span><span class="p">,</span><span class="s">'red'</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s">'bold'</span><span class="p">])</span> <span class="o">+</span>
+                  <span class="n">nums</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div></div> <ul> <li>Lastly in order to run this program we need to obtain api keys from <a href="https://www.yelp.com/developers">Yelp Developers</a>.</li> <li>Once you have the api keys now you need to export those keys <code class="highlighter-rouge">export API_KEY=XXXXXXX</code></li> <li>Now you are all set and Guess what you wrote your first interactive CLI App.</li> </ul> <p>Anyways this was my first blog post after a really long time as I was busy with school.</p> <p>I hope you enjoyed this post and if you think i missed any thing feel free to dm me on <a href="https://twitter.com/">twitter</a> Feel to share it among your friends and colleagues.</p> <p>Feel to share it among your friends and colleagues.</p> <h4 id="source-code"><a href="https://github.com/mraza007/yelp-cli">Source Code</a></h4> <aside class="share"> <p>If you liked this article and think others should read it, please share it on <a href="http://twitter.com/share?text=Creating Interactive CLI App&amp;url=http://localhost:4000/2019/Creating-Interactive-CLI-App/&amp;via=muhammad_o7" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a> or <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/Creating-Interactive-CLI-App/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=235');return false;">Facebook</a>.</p> </aside> </div> </article> <footer class="site-footer"> <div class="container"> <small class="block">&copy; 2020 Muhammad Raza&middot;Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://github.com/heiswayi/thinkspace">Thinkspace theme</a></small> </div> </footer> </main> <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-123408808-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script> </body> </html>
