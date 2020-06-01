@@ -3,7 +3,7 @@ layout: page
 title: Work
 permalink: /work/
 ---
-Hi! Its Muhammad. I am currently a rising senior at Queens College, NY studyinRg Economics and Computer Science. On this page you can read more about my work experience and if you like a copy of my resume feel free to [email me](mailto:muhammadraza0047@gmail.com).
+Hi! Its Muhammad. I am currently a rising senior at Queens College, NY studying Economics and Computer Science. On this page you can read more about my work experience and if you like a copy of my resume feel free to [email me](mailto:muhammadraza0047@gmail.com).
 
 ### `Software Engineering Intern` @ The City University of New York (CUNY) _**06/2018 - 06/2019**_
 - While working for `CUNY` I worked on several tasks such as maintaing `django` web application, writing `unittests` and etc.
@@ -14,10 +14,10 @@ Hi! Its Muhammad. I am currently a rising senior at Queens College, NY studyinRg
 
 ### `Software Engineering Intern` @  JPMorgan Chase & Co (JPMC)  _**06/2019 - 08/2019**_
 - During my time at `JPMC` I took over several tasks such as adding new features to an existing application and Deployment of `machine-learning` models.
-- As intern I worked on adding new features to an existing search engine application that was used to index production issues. The application  stack was based on `SpringBoot`,`Angular for frontend` and `MariaDB`.
+- As intern I worked on adding new features to an existing search engine application that was used to index production issues. The application stack was based on `SpringBoot`,`Angular for frontend` and `MariaDB`.
 - I also deployed machine learning models on `Kuberenetes` that tagged production issues in the `application`.
-- Also wrote a simple feature that sent out deployment email notifications.
-- I also volunteered on different projects such as doing `explanatory data analysis` of production issues for the upper management to help them understand the most occuring issues in the production environment.
+- I also wrote a simple feature that sent out deployment email notifications.
+- During my time as intern I also volunteered on different projects such as doing `explanatory data analysis` of production issues for the upper management to help them understand the most occuring issues in the production environment.
 - While working as an intern I also got involved in different developer communties at `JPMC` such `Python`,`RUST` and `DevOps`.
 
 ### `Innovation Intern` @  HSBC Holdings plc  _**01/2020 - 06/2020**_
