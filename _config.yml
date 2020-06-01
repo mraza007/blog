@@ -3,7 +3,7 @@ title_left    : ""
 title_right   : "Muhammad" # default: ""
 description   : "Personal Blog where I write about things I learn or discover."
 keywords      : "github, theme, free, download, SEO, blog, web, javascript, programming, stackoverflow, python"
-url           : "http://muhammadraza.me" # site url
+url           : "//muhammadraza.me" # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
