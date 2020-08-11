@@ -15,10 +15,10 @@ Hi! Its Muhammad. I am currently a rising senior at Queens College, NY studying 
 ### `Software Engineering Intern` @  JPMorgan Chase & Co (JPMC)  _**06/2019 - 08/2019**_
 - During my time at `JPMC` I took over several tasks such as adding new features to an existing application and Deployment of `machine-learning` models.
 - As intern I worked on adding new features to an existing search engine application that was used to index production issues. The application stack was based on `SpringBoot`,`Angular for frontend` and `MariaDB`.
-- I also deployed machine learning models on `Kuberenetes` that tagged production issues in the `application`.
+- I also deployed machine learning models on `Kubernetes` that tagged production issues in the `application`.
 - I also wrote a simple feature that sent out deployment email notifications.
-- During my time as intern I also volunteered on different projects such as doing `explanatory data analysis` of production issues for the upper management to help them understand the most occuring issues in the production environment.
-- While working as an intern I also got involved in different developer communties at `JPMC` such `Python`,`RUST` and `DevOps`.
+- During my time as intern I also volunteered on different projects such as doing `explanatory data analysis` of production issues for the upper management to help them understand the most occurring issues in the production environment.
+- While working as an intern I also got involved in different developer communities at `JPMC` such `Python`,`RUST` and `DevOps`.
 
 ### `Innovation Intern` @  HSBC Holdings plc  _**01/2020 - 06/2020**_
 - At `HSBC` I worked as an `Innovation Intern` within `Financial Crime Risk` team where I supported several projects.
