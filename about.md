@@ -3,7 +3,7 @@ layout: page
 title: Work
 permalink: /work/
 ---
-Hi! Its Muhammad. I am currently a rising senior at Queens College, NY studying Economics and Computer Science. On this page you can read more about my work experience and if you like a copy of my resume feel free to [email me](mailto:muhammadraza0047@gmail.com).
+Hi! Its Muhammad. I am recent graduate from Queens College,where I studied Economics and Computer Science. On this page you can read more about my work experience and if you like a copy of my resume feel free to [email me](mailto:muhammadraza0047@gmail.com).
 
 ### `Software Engineering Intern` @ The City University of New York (CUNY) _**06/2018 - 06/2019**_
 - While working for `CUNY` I worked on several tasks such as maintaing `django` web application, writing `unittests` and etc.
