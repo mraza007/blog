@@ -3,6 +3,7 @@ layout: post
 title: "Creating Interactive CLI App"
 description: "In this post we will be using PyInquirer Library to create an interactive cli app."
 keywords: "python cli apps commandling pyinquirer"
+tag: [python]
 ---
 
 In this blog post I will be walking you through the process of writing an interactive commandline app using Python. I have been a huge fan commandline apps and I love to create commandline apps since it helps me remain productive and makes navigation a lot easier compared to GUIs.

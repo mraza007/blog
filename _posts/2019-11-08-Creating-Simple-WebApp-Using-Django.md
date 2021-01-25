@@ -3,6 +3,7 @@ layout: post
 title: "Creating Simple Web App Using Django "
 description: "In this post I will walking through the process of getting started with django framework and creating a simple useful web app."
 keywords: "python django webapp api simplenews app"
+tags: [django]
 ---
 
 In this post I will be walking you through the process of creating a simple web app using django web framework.

@@ -3,6 +3,7 @@ layout: post
 title: "Visualizing Stocks"
 description: "In this post we explore Plotly Library and how we can use it to visualize vast amount of data. I will be demonstrating how to visualizing stocks"
 keywords: "plotly python stocks finance"
+tags: [jupyter]
 ---
 
 

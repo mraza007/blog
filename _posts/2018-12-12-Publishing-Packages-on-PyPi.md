@@ -3,6 +3,7 @@ layout: post
 title: "Publishing Packages on PyPi"
 description: "In this post we learn how to publish python packages on PyPi"
 keywords: "PyPi python python3 github opensource"
+tags: [python]
 ---
 
 

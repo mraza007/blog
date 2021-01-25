@@ -3,6 +3,7 @@ layout: post
 title: "Sending SMS using Python"
 description: "In this post we explore the capabilites of SMTPLIB library and how can use that to send sms to our phones"
 keywords: "sms python notwilio smtplib"
+tags: [python]
 ---
 
 
