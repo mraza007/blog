@@ -3,6 +3,7 @@ layout: post
 title: "Download YouTube videos using Python."
 description: "Learn how to use Python to download YouTube Videos."
 keywords: "pytube python videodownloader"
+tags: [python]
 ---
 In this blog I am going to demonstrate how can we use Python to download 
 Yotube videos.

@@ -4,6 +4,7 @@ title: "Exploring Git"
 description: "In this post I will be exploring how git works and what is the
 underlying tech behind git"
 keywords: "git github linus version control"
+tags: [git]
 ---
 
 

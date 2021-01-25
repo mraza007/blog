@@ -3,6 +3,7 @@ layout: post
 title: "Bash Aliases"
 description: "In this post we explore how to use Bash Aliases"
 keywords: "bash scripting automation shell"
+tags: [linux]
 ---
 
 In this post I am going to talk about how can we remain productive by creating bash aliases and save our time by creating easy to use shortcuts for repetitive commands.
