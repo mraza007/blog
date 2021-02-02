@@ -1,10 +1,11 @@
 ---
-layout: post
+layout: page
 title: Things I discover (Programming/Linux/Automation/Shell)
 tags: [TIL]
+description: "A place where I log things I learn or discover while working"
+permalink: /til/
 published: false
 ---
-
 - [x] I learned about deploying django webapps using gunicorn and nginx. I was able to deploy full fledge application on raspberry pi.
 - [x] I was able to configure NGINX and serve static files on the client side.
 - [x] Learned about public and private IP addresses. most of the private IP addresses start with `192.XXX.XXX.XXX` or `172.XXX.XXX.XXX`
