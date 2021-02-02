@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Things I discover (Programming/Linux/Automation/Shell)
+permalink: /til/
 tags: [TIL]
 description: "A place where I log things I learn or discover while working"
-permalink: /til/
 published: false
 ---
 - [x] I learned about deploying django webapps using gunicorn and nginx. I was able to deploy full fledge application on raspberry pi.
