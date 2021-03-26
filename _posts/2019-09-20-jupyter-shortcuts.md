@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jupyter Keyshotcuts"
+title: "Jupyter Keyshortcuts"
 tags : [jupyter]
 ---
 
