@@ -3,6 +3,7 @@ layout: post
 title: "Linux File System"
 description: "Description about linux file system. A helper post"
 keywords: "linux filesystem debian ubuntu"
+published: false
 ---
 
 - In Linux everything is represented by a file and a folder.
