@@ -9,8 +9,8 @@ cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : "UA-123408808-1"
 twitter_username  : "muhammad_o7"
-comments_enabled  : false # if enabled (set to true), please provide your disqus_username
-disqus_shortname  : muhammadraza-me
+comments_enabled  : true # if enabled (set to true), please provide your disqus_username
+disqus_shortname  : muhammad-raza
 postshare_enabled : true
 
 # Build settings
