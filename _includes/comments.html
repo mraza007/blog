@@ -1,13 +1,10 @@
 {% if site.comments_enabled and page.comments %}
   <aside id="comments" class="disqus">
-
-    <div id="remarkbox-div">
-      <noscript>
-        <iframe id=remarkbox-iframe src="https://my.remarkbox.com/embed?nojs=true" style="height:600px;width:100%;border:none!important" tabindex=0></iframe>
-      </noscript>
-    </div>
-
-  </aside>
+<div id="remarkbox-div">
+  <noscript>
+    <iframe id=remarkbox-iframe src="https://my.remarkbox.com/embed?nojs=true" style="height:600px;width:100%;border:none!important" tabindex=0></iframe>
+  </noscript>
+</div>
 <script src="https://my.remarkbox.com/static/js/iframe-resizer/iframeResizer.min.js"></script>
 <script>
   var rb_owner_key = "79e72a11-4c41-11e9-9d67-040140774501";
@@ -43,6 +40,8 @@
     document.getElementById("remarkbox-iframe")
   );
 </script>
+
+ </aside>
 
 {% endif %}
 
