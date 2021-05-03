@@ -42,7 +42,7 @@ This command allows you to see what apps are consuming internet.
 
 8. `grep . *`
 
-If you want to `cat` bunch of files at once you can this command.
+If you want to `cat` bunch of files at once you can run this command.
 
 
 9. `rm -f !(test.txt)`.
