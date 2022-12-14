@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Using Commandline To Process CSV files"
-description: ""
+description: "The Command Line is a powerful tool for processing data. With the right combination of commands, you can quickly and easily manipulate data files to extract the information you need"
+keywords: "linux unix bash sysadmin commandline csv data processing"
 keywords: "linux unix bash sysadmin commandline csv data processing"
 tags: [bash]
 comments: true
