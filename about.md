@@ -5,6 +5,18 @@ permalink: /work/
 ---
 Hi! Its Muhammad. I am recent graduate from Queens College,where I studied Economics and Computer Science. On this page you can read more about my work experience and if you like a copy of my resume feel free to [email me](mailto:muhammadraza0047@gmail.com).
 
+### `Professional Services Consultant (Application Developer)` @ Amazon Web Services _**06/2021 - 06/2023**_
+
+  - Migrated Cloudformation resources onto Cloudformation Registry using Java, enabling seamless 3rd party integration with Cloudformation.
+  - Significantly contributed to the successful migration of high-volume AWS resources including `AWS::CodeDeploy::Application`
+  `AWS::EC2::Volume`, and `AWS::IAM::InstanceProfile`, which are currently utilized by millions of customers.
+  - Streamlined project documentation, reducing onboarding time from 3 months to just 1 month, enabling faster developer onboarding and project ramp-up.
+ - Implemented automation scripts that significantly reduced deployment efforts, automated tedious tasks, and streamlined the deployment process, resulting in a notable decrease in manual effort.
+  - Leveraged Jupyter notebooks to streamline deployment troubleshooting and gather valuable insights into production resources.
+  - Successfully led a team of six developers as a tenured consultant on the project, overseeing the seamless migration of CloudFormation resources onto CloudFormation Registry.
+ - Apart from my customer work, I also mentored new hires on the team, enabling them to quickly ramp up their skills and contribute effectively to different customer projects.
+
+
 ### `Software Engineering Intern` @ The City University of New York (CUNY) _**06/2018 - 06/2019**_
 - While working for `CUNY` I worked on several tasks such as maintaing `django` web application, writing `unittests` and etc.
 - As intern I developed new features in our `django` web application that ran on raspberry pi. It was used to visualize electricity usage throughout the `CUNY` organization.
