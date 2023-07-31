@@ -7,7 +7,7 @@ url           : "//muhammadraza.me" # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
-google_analytics  : "UA-123408808-1"
+google_analytics  : "G-N8JW7K57P9"
 twitter_username  : "muhammad_o7"
 comments_enabled  : true # if enabled (set to true), please provide your disqus_username
 disqus_shortname  : muhammad-raza
