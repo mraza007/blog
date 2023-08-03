@@ -64,5 +64,3 @@ Lastly I hope you enjoyed reading this and got a chance to learn something new f
 _I write occasionally feel free to follow me on [twitter](https://twitter.com/muhammad_o7), also I run a newsletter and if you like reading technology news you can subscribe [here](https://devconsole.substack.com/)_ 
 
 
-_To support my work, I've enabled ads on my blog. I hope you don't mind them, as they help me continue creating valuable content. Your understanding and support mean the world to me! Thank you!_
-
