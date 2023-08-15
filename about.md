@@ -16,21 +16,7 @@ Hi! Its Muhammad. I am recent graduate from Queens College,where I studied Econo
   - Successfully led a team of six developers as a tenured consultant on the project, overseeing the seamless migration of CloudFormation resources onto CloudFormation Registry.
  - Apart from my customer work, I also mentored new hires on the team, enabling them to quickly ramp up their skills and contribute effectively to different customer projects.
 
-
-### `Software Engineering Intern` @ The City University of New York (CUNY) _**06/2018 - 06/2019**_
-- While working for `CUNY` I worked on several tasks such as maintaing `django` web application, writing `unittests` and etc.
-- As intern I developed new features in our `django` web application that ran on raspberry pi. It was used to visualize electricity usage throughout the `CUNY` organization.
-- I also wrote unittests for the webapp and developed automation scripts which was used to backup database.
-- While maintaining `django` application I also supported energy analysts by writing `VBA` scripts that automated the process of energy reporting.
-- While this was my first internship I was able to gain new skills such as working with `django`,`vba` and `postgres` db.
-
-### `Software Engineering Intern` @  JPMorgan Chase & Co (JPMC)  _**06/2019 - 08/2019**_
-- During my time at `JPMC` I took over several tasks such as adding new features to an existing application and Deployment of `machine-learning` models.
-- As intern I worked on adding new features to an existing search engine application that was used to index production issues. The application stack was based on `SpringBoot`,`Angular for frontend` and `MariaDB`.
-- I also deployed machine learning models on `Kubernetes` that tagged production issues in the `application`.
-- I also wrote a simple feature that sent out deployment email notifications.
-- During my time as intern I also volunteered on different projects such as doing `explanatory data analysis` of production issues for the upper management to help them understand the most occurring issues in the production environment.
-- While working as an intern I also got involved in different developer communities at `JPMC` such `Python`,`RUST` and `DevOps`.
+---
 
 ### `Innovation Intern` @  HSBC Holdings plc  _**01/2020 - 06/2020**_
 - At `HSBC` I worked as an `Innovation Intern` within `Financial Crime Risk` team where I supported several projects.
@@ -42,6 +28,24 @@ Hi! Its Muhammad. I am recent graduate from Queens College,where I studied Econo
 - Lastly I developed RPA solution that performed `account` reconciliation. This was a huge thing since it was able to save the time as process was done manually taking atleast 3 days.
 - While working at `HSBC` I was able to gain knowledge about machine learning and how auditing worked especially within financial crime risk space.
 
+---
+
+### `Software Engineering Intern` @  JPMorgan Chase & Co (JPMC)  _**06/2019 - 08/2019**_
+- During my time at `JPMC` I took over several tasks such as adding new features to an existing application and Deployment of `machine-learning` models.
+- As intern I worked on adding new features to an existing search engine application that was used to index production issues. The application stack was based on `SpringBoot`,`Angular for frontend` and `MariaDB`.
+- I also deployed machine learning models on `Kubernetes` that tagged production issues in the `application`.
+- I also wrote a simple feature that sent out deployment email notifications.
+- During my time as intern I also volunteered on different projects such as doing `explanatory data analysis` of production issues for the upper management to help them understand the most occurring issues in the production environment.
+- While working as an intern I also got involved in different developer communities at `JPMC` such `Python`,`RUST` and `DevOps`.
+
+---
+
+### `Software Engineering Intern` @ The City University of New York (CUNY) _**06/2018 - 06/2019**_
+- While working for `CUNY` I worked on several tasks such as maintaing `django` web application, writing `unittests` and etc.
+- As intern I developed new features in our `django` web application that ran on raspberry pi. It was used to visualize electricity usage throughout the `CUNY` organization.
+- I also wrote unittests for the webapp and developed automation scripts which was used to backup database.
+- While maintaining `django` application I also supported energy analysts by writing `VBA` scripts that automated the process of energy reporting.
+- While this was my first internship I was able to gain new skills such as working with `django`,`vba` and `postgres` db.
 
 
 ### Skills
