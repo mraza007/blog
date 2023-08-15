@@ -60,7 +60,7 @@ My skills include,
 * `Java`
 * `SciKit Learn`
 * `Linux`
-* I constantly try to learn new skills
+* I constantly try to learn new skills and hold 3 different AWS Certifications such as AWS Cloud Practitioner, AWS Solutions Architect and AWS Developer Associate
 
 Lastly this was my work experience, Furthermore, In my free time I usually spend my time reading blogs/articles and tech related internet discussions. I also contribute to opensource such as improving the documentation or working on issues and creating new resources for beginners.
 
