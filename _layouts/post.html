@@ -4,7 +4,9 @@ layout: default
 
 <article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} &middot; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date |
+        date: "%b %-d, %Y" }}</time>{% if page.author %} &middot; <span itemprop="author" itemscope
+        itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
   </header>
   <div class="post-content" itemprop="articleBody">
@@ -14,7 +16,6 @@ layout: default
 </article>
 <div class="container">
   <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CWYDE5QI&placement=muhammadrazame"
-      id="_carbonads_js"></script>
+    id="_carbonads_js"></script>
 </div>
-
 {% include comments.html %}
