@@ -24,11 +24,11 @@ grep [options] pattern [file...]
 ```
 
 Here's a simple understanding of how it works:
-1. *Search Pattern:* You provide a search pattern, which can be a simple string or a complex regular expression. This pattern defines what you're searching for within the files.
-2. *Files to Search:* You can specify one or more files (or even directories) in which grep should search for the pattern. If you don't specify any files, `grep` reads from the standard input (which allows you to pipe in data from other commands).
-3. *Matching Lines:* `grep` scans through each line of the specified files (or standard input) and checks if the search pattern matches the content of the line.
-4. *Output:* When a line containing a match is found, `grep` prints that line to the standard output. If you're searching within multiple files, `grep` also prefixes the matching lines with the file name.
-5. *Options:* `grep` offers various options that allow you to control its behavior. For example, you can make the search case-insensitive, display line numbers alongside matches, invert the match to show lines that don't match, and more.
+1. **Search Pattern:** You provide a search pattern, which can be a simple string or a complex regular expression. This pattern defines what you're searching for within the files.
+2. **Files to Search:** You can specify one or more files (or even directories) in which grep should search for the pattern. If you don't specify any files, `grep` reads from the standard input (which allows you to pipe in data from other commands).
+3. **Matching Lines:** `grep` scans through each line of the specified files (or standard input) and checks if the search pattern matches the content of the line.
+4. **Output:** When a line containing a match is found, `grep` prints that line to the standard output. If you're searching within multiple files, `grep` also prefixes the matching lines with the file name.
+5. **Options:** `grep` offers various options that allow you to control its behavior. For example, you can make the search case-insensitive, display line numbers alongside matches, invert the match to show lines that don't match, and more.
 
 #### Backstory of Development
 
@@ -47,25 +47,25 @@ So you might be wondering how `grep` can be used for log analysis. Well, `grep` 
 
 Debugging often starts with identifying errors in logs. To isolate errors using grep, I use the following techniques:
 
-1. *Search for Error Keywords:* Start by searching for common error keywords such as `"error"`, `"exception"`, `"fail"` or `"invalid"` . Use case-insensitive searches with the `-i` flag to ensure you capture variations in case.
-2. *Multiple Pattern Search:* Use the `-e` flag to search for multiple patterns simultaneously. For instance, you could search for both `"error"` and `"warning"` messages to cover a wider range of potential issues.
-3. *Contextual Search:* Use the `-C` flag to display a certain number of lines of context around each match. This helps you understand the context in which an error occurred.
+1. **Search for Error Keywords:** Start by searching for common error keywords such as `"error"`, `"exception"`, `"fail"` or `"invalid"` . Use case-insensitive searches with the `-i` flag to ensure you capture variations in case.
+2. **Multiple Pattern Search:** Use the `-e` flag to search for multiple patterns simultaneously. For instance, you could search for both `"error"` and `"warning"` messages to cover a wider range of potential issues.
+3.**Contextual Search:** Use the `-C` flag to display a certain number of lines of context around each match. This helps you understand the context in which an error occurred.
 
 #### Tracking Down Issues
 
 Once you've isolated errors, it's time to dig deeper and trace the source of the issue:
 
-1. *Timestamp-Based Search:* If your logs include timestamps, use them to track down the sequence of events leading to an issue. You can use `grep` along with regular expressions to match specific time ranges.
-2. *Unique Identifiers:* If your application generates unique identifiers for events, use these to track the flow of events across log entries. Search for these identifiers using `grep`.
-3. *Combining with Other Tools:* Combine grep with other command-line tools like `sort`, `uniq`, and `awk` to aggregate and analyze log entries based on various criteria.
+1. **Timestamp-Based Search:** If your logs include timestamps, use them to track down the sequence of events leading to an issue. You can use `grep` along with regular expressions to match specific time ranges.
+2. **Unique Identifiers:** If your application generates unique identifiers for events, use these to track the flow of events across log entries. Search for these identifiers using `grep`.
+3. **Combining with Other Tools:** Combine grep with other command-line tools like `sort`, `uniq`, and `awk` to aggregate and analyze log entries based on various criteria.
 
 #### Identifying Patterns
 
 Log analysis is not just about finding errors; it's also about identifying patterns that might provide insights into performance or user behavior:
 
-1. *Frequency Analysis:* Use grep to count the occurrence of specific patterns. This can help you identify frequently occurring events or errors.
-2. *Custom Pattern Matching:* Leverage regular expressions to define custom patterns based on your application's unique log formats.
-3. *Anomaly Detection:* Regular expressions can also help you detect anomalies by defining what "normal" log entries look like and searching for deviations from that pattern.
+1. **Frequency Analysis:** Use grep to count the occurrence of specific patterns. This can help you identify frequently occurring events or errors.
+2. **Custom Pattern Matching:** Leverage regular expressions to define custom patterns based on your application's unique log formats.
+3. **Anomaly Detection:** Regular expressions can also help you detect anomalies by defining what "normal" log entries look like and searching for deviations from that pattern.
 
 ## Conclusion
 
