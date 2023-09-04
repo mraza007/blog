@@ -82,7 +82,7 @@ So, this `awk` command looks for lines containing anchor tags (`<a>`) and extrac
 
 ## Conclusion
 
-So here's a simple web scraper written in bash and uses cli tools such as `awk`, `sed` , `grep` and `curl`. As bash is available on most Linux system so it can be useful for scraping data from web pages without having to install any additional software. However, it is not as powerful as Python or other programming languages when it comes to web scraping. But it can be useful for simple tasks such as extracting links and titles from a webpage and I would not recommend using it for complex web scraping task. 
+So here's a simple web scraper written in bash and uses cli tools such as `awk`, `sed` , `grep` and `curl`. As bash is available on most Linux system so it can be useful for scraping data from web pages without having to install any additional software. However, it is not as powerful as Python or other programming languages when it comes to web scraping. But it can be useful for simple tasks such as extracting links and titles from a webpage and I would not recommend using it for complex web scraping tasks. 
 
 Anyways this was a fun little script I created while learning about bash scripting and using cli tools such as `awk` , `grep` , `sed` and `curl`. I would still consider myself a beginner at this. 
 
@@ -91,4 +91,4 @@ Lastly I hope you enjoyed reading this and got a chance to learn something new f
 
 
 <br>
-_If you loved this post, you can always support my work by [buying me a coffee](https://www.buymeacoffee.com/mraza007). your support would mean the world to me!. Also you can follow me on Twitter, and definitely tag me [@muhammad_o7](https://twitter.com/muhammad_o7). when you share this post on twitter_
+_If you loved this post, you can always support my work by [buying me a coffee](https://www.buymeacoffee.com/mraza007). your support would mean the world to me!. Also you can follow me on [Twitter](https://twitter.com/muhammad_o7), and definitely tag me [@muhammad_o7](https://twitter.com/muhammad_o7). when you share this post on twitter_
