@@ -5,7 +5,7 @@ permalink: /work/
 ---
 Hi! Its Muhammad. I am recent graduate from Queens College,where I studied Economics and Computer Science. On this page you can read more about my work experience and if you like a copy of my resume feel free to [email me](mailto:muhammadraza0047@gmail.com).
 
-### `Professional Services Consultant (Application Developer)` @ Amazon Web Services _**06/2021 - 06/2023**_
+### `Professional Services Consultant (Application Developer)` @ Amazon Web Services _**06/2022 - 07/2023**_
 
   - Migrated Cloudformation resources onto Cloudformation Registry using Java, enabling seamless 3rd party integration with Cloudformation.
   - Significantly contributed to the successful migration of high-volume AWS resources including `AWS::CodeDeploy::Application`
@@ -15,6 +15,29 @@ Hi! Its Muhammad. I am recent graduate from Queens College,where I studied Econo
   - Leveraged Jupyter notebooks to streamline deployment troubleshooting and gather valuable insights into production resources.
   - Successfully led a team of six developers as a tenured consultant on the project, overseeing the seamless migration of CloudFormation resources onto CloudFormation Registry.
  - Apart from my customer work, I also mentored new hires on the team, enabling them to quickly ramp up their skills and contribute effectively to different customer projects.
+
+*Note: It's the same role but different specialization*
+
+---
+
+### `Professional Services Consultant (DevOps Consultant)` @ Amazon Web Services _**06/2021 - 06/2022**_
+
+- Collaborated with an external customer to rewrite AWS CDK constructs from `Python` to `TypeScript`.
+- Leveraged `JSII` to convert `CDK` Constructs to other languages, including `C#` and `Java`, making it easier for the customer to use AWS CDK. Specifically, I rewrote the custom AWS RDS python construct in `TypeScript`, and then used `JSII` to convert it to `Java` and `C#`, significantly reducing 
+deployment times for the customer’s DBA teams from weeks to minutes.
+- Also wrote different CDK Constructs, For instance ALB+ECS Construct helping customer deploy applications on ECS behing an ALB.
+- Implemented CICD pipelines for the customer, reducing manual deployment efforts and streamlining the deployment process and also developed a Github Actions Template repository helping developers to setup their own CI/CD when deploying applications
+- Also Led Weekly Team meetings increasing team engagement while working remotely
+
+---
+
+### `Professional Services Intern` @ Amazon Web Services _**06/2020 - 08/2020**_
+
+During my time as intern at `AWS`, I worked on the following:
+
+- Collaborated with an external customer to write Cloudformation templates, enabling them to provision their infrastructure through IaC while minimizing manual effort and saving them time.
+- Led the development of a proof-of-concept internal communication handbook using VueJS as the primary developed.
+- Assisted my team in calculating migration costs for an external customer.
 
 ---
 
