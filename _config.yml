@@ -17,7 +17,7 @@ postshare_enabled : true
 permalink   : /:year/:title/
 markdown    : kramdown
 highlighter : rouge
-
+  input: GFM
 
 
 source      : ./
