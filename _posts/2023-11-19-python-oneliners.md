@@ -85,7 +85,7 @@ merged_dict = {**dict1, **dict2}
 Finally, I hope you enjoyed reading this and had the opportunity to learn something new. If you have any feedback, please feel free to leave a comment below. If you prefer not to comment publicly, you can always send me an [email](mailto:muhammadraza0047@gmail.com). Also I would love to see your favorite python one liner code snippets.
 
 
-If you're interested in advancing your programming skills and would love to learn how to build cool projects like Docker, BitTorrent, or even understand the internals of your favorite tools such as `Git`, `grep` and etc by recreating them in your preferred programming language, I highly recommend you join [Code Crafters](https://app.codecrafters.io/join?via=mraza007).
+**If you're interested in advancing your programming skills and would love to learn how to build cool projects like Docker, BitTorrent, or even understand the internals of your favorite tools such as `Git`, `grep` and etc by recreating them in your preferred programming language, I highly recommend you join [Code Crafters](https://app.codecrafters.io/join?via=mraza007).**
 
 
 ---
