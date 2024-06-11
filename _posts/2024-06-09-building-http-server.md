@@ -180,7 +180,7 @@ Finally, I hope you enjoyed reading this and had the opportunity to learn about 
 Furthermore, you can improve this further, for example you can add more functionality when a request is made and a server looks for html file and sends back in response. 
 
 
-**If loved reading this blog post and would love to learn more stuff like this I highly recommend you join [Code Crafters](https://app.codecrafters.io/join?via=mraza007). They have amazing new challenges such as helping you learn how to build docker, how to your own shell and much more.**
+**If loved reading this blog post and would love to learn more stuff like this I highly recommend you join [Code Crafters](https://app.codecrafters.io/join?via=mraza007). They have amazing new challenges such as helping you learn how to build docker, how to build your own shell and much more.**
 
 
 ---
