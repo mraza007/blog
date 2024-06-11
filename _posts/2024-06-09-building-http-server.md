@@ -188,7 +188,7 @@ Furthermore, you can improve this further, for example you can add more function
 #### Announcements
 
 - I started a youtube channel a year ago, and if you want me to create video series about interesting stuff like this feel free to [subscribe](https://www.youtube.com/channel/UCC_OnjbHWxVNYjf4YsAdMdA) and let me know your opinion in this [anonymous survey](https://forms.gle/XpSt27hS84RFkW3A7)
-- I am also open for Python Consulting as well, If you any interesting python project or even need advice regarding tech, you can always send an [email](mailto:muhammadraza0047@gmail.com)
+- I am also open for Python Consulting as well, If you have a python project or even need advice regarding tech, you can always send an [email](mailto:muhammadraza0047@gmail.com) and we can discuss.
 - Lastly A huge thanks for reading this and supporting my work.
 
 
