@@ -7,7 +7,9 @@ tags: [python]
 comments: true
 ---
 
-In this blog post, we will be building a simple Pastebin service using Python and Flask. Pastebin is a popular web application used to store plain text or code snippets for a certain period of time. We'll create a basic version that allows users to paste text, select the programming language, and get a URL to share the paste.
+In this blog post, we will be building a simple Pastebin service using Python and Flask. Pastebin is a popular web application used to store plain text or code snippets for a certain period of time. We'll create a basic version that allows users to paste text, select the programming language, and get a URL to share the paste. I have also created a YouTube video about this, which you can view [here](https://youtu.be/s2RQfUxOuco).
+
+
 
 ## Getting Starting
 
