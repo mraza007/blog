@@ -44,3 +44,40 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+:root {
+  // Light theme (default)
+  --bg-color: #ffffff;
+  --text-color: #24292e;
+  --heading-color: #1a1a1a;
+  --link-color: #0366d6;
+  --link-hover-color: #035fc7;
+  --code-bg: #f6f8fa;
+  --code-color: #24292e;
+  --inline-code-bg: #f1f1f1;
+  --inline-code-color: #e83e8c;
+  --blockquote-bg: #f8f9fa;
+  --blockquote-border: #dee2e6;
+  --table-border: #dee2e6;
+  --table-stripe: #f8f9fa;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #0d1117;
+  --text-color: #c9d1d9;
+  --heading-color: #e6edf3;
+  --link-color: #58a6ff;
+  --link-hover-color: #79b8ff;
+  --code-bg: #161b22;
+  --code-color: #c9d1d9;
+  --inline-code-bg: #343942;
+  --inline-code-color: #ff7b72;
+  --blockquote-bg: #161b22;
+  --blockquote-border: #30363d;
+  --table-border: #30363d;
+  --table-stripe: #161b22;
+  --nav-bg: rgba(13, 17, 23, 0.95);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}

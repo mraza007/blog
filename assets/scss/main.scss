@@ -5,3 +5,41 @@
 
 @import "layout";
 @import "syntax-highlighting";
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: var(--link-hover-color);
+  }
+}
+
+// Update code highlighting
+.highlight {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  
+  pre, code {
+    background-color: var(--code-bg);
+    color: var(--code-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .gutter {
+    background-color: var(--blockquote-bg);
+    border-right: 1px solid var(--border-color);
+  }
+}
