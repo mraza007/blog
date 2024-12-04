@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="container">
+  <h1 class="tag-title">Posts tagged with "{{ page.tag }}"</h1>
+  
+  <div class="post-list">
+    {% for post in site.tags[page.tag] %}
+      <article class="post-item">
+        <span class="post-meta date">{{ post.date | date: "%b %d, %Y" }}</span>
+        <h2 class="post-title">
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </article>
+    {% endfor %}
+  </div>
+</div> 
