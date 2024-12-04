@@ -1,0 +1,44 @@
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+.tag-item {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: #f5f5f5;
+  border-radius: 3px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  
+  &:hover {
+    background: #e5e5e5;
+  }
+}
+
+.tag-title {
+  margin-bottom: 2rem;
+}
+
+// Style for tags in posts
+.post-tags {
+  margin-top: 1rem;
+  
+  a {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    margin-right: 0.5rem;
+    background: #f5f5f5;
+    border-radius: 3px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.8rem;
+    
+    &:hover {
+      background: #e5e5e5;
+    }
+  }
+}
