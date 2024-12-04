@@ -1,0 +1,88 @@
+// Font variables
+:root {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SF Mono", SFMono-Regular, Consolas, Menlo, monospace;
+  --font-serif: Georgia, Cambria, "Times New Roman", serif;
+}
+
+// Base typography - careful not to override existing styles
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Post specific typography
+.post {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  .post-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .post-title {
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .post-meta {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+
+  .post-content {
+    // Typography improvements
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    // Lists
+    ul, ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    // Blockquotes
+    blockquote {
+      margin: 1.5rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid var(--border-color);
+      font-style: italic;
+    }
+
+    // Code blocks
+    pre {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 4px;
+    }
+
+    // Inline code
+    code {
+      font-family: var(--font-mono);
+    }
+
+    // Images
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1.5rem 0;
+    }
+  }
+}

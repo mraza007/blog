@@ -1,0 +1,19 @@
+---
+layout: default
+title: Tags
+---
+
+<div class="container">
+  <h1>All Tags</h1>
+  
+  <div class="tags-list">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      {% assign tag_name = tag | first %}
+      {% assign posts = tag | last %}
+      <a href="/tags/{{ tag_name }}" class="tag-item">
+        {{ tag_name }} ({{ posts | size }})
+      </a>
+    {% endfor %}
+  </div>
+</div> 
