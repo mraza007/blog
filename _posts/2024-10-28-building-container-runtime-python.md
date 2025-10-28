@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "Understanding Docker Internals: Building a Container Runtime in Python"
-description: "Demystify container technology by building a simple container runtime from scratch using Python and Linux primitives like namespaces and cgroups"
+description: "Breaking down container technology by building a simple container runtime from scratch using Python and Linux primitives like namespaces and cgroups"
 keywords: "python docker containers linux namespaces cgroups devops systems-programming"
 tags: [python, linux]
 comments: true
 ---
 
-I've been working with containers professionally for several years now, using Docker and Kubernetes daily in production environments. Like many developers, I initially treated containers as "magic boxes" - I knew how to use them, but didn't really understand what was happening under the hood. It wasn't until I needed to debug a particularly nasty container networking issue at work that I realized I needed to understand the underlying technology better.
+I've been working with containers professionally for several years now, using Docker and Kubernetes daily in production environments. Like many developers, I initially treated containers as a "black box" - I knew how to use them, but didn't really understand what was happening under the hood. It wasn't until I needed to debug a particularly container networking issue at work that I realized I needed to understand the underlying technology better.
 
-In this post, I'll take you on a journey to demystify container technology by building a simple container runtime in Python. We'll explore the Linux primitives that make containers possible and implement them step by step. By the end, you'll understand that containers aren't magic - they're just clever uses of existing Linux features.
+In this post, I'll take you on a journey to breakdown container technology by building a simple container runtime in Python. We'll explore the Linux primitives that make containers possible and implement them step by step. By the end, you'll understand how containers work.
 
 ## What Actually IS a Container?
 
@@ -702,7 +702,7 @@ It's crucial to understand that our simple implementation lacks many security fe
 
 4. **No AppArmor/SELinux**: No mandatory access control.
 
-These missing features are why you should never use our implementation in production!
+These missing features are why you should never use this implementation in production!
 
 ## Conclusion
 
@@ -726,7 +726,7 @@ If you enjoyed this deep dive, here are resources to continue learning:
 - **runc Source Code**: Docker's actual container runtime
 - **LXC/LXD**: Linux containers project - the original container tech
 
-I also highly recommend [CodeCrafters' "Build Your Own Docker" challenge](https://app.codecrafters.io/join?via=mraza007) - it's an interactive way to build a container runtime with guided steps and automatic testing.
+I also highly recommend [CodeCrafters' "Build Your Own Docker" challenge](https://app.codecrafters.io/join?via=mraza007) - it's an interactive way to build a container runtime with guided steps.
 
 ## Next Steps
 
@@ -745,6 +745,6 @@ Let me know in the comments what you'd like to see next!
 - I'm available for Python and DevOps consulting. If you need help with containerization, automation, or infrastructure, feel free to reach out via [email](mailto:muhammadraza0047@gmail.com).
 
 <br>
-_If you found this post valuable, you can [buy me a coffee](https://www.buymeacoffee.com/mraza007) to support my work. If you share this on X, tag me [@muhammad_o7](https://twitter.com/muhammad_o7) - I'd love to see your thoughts! You can also connect with me on [LinkedIn](https://www.linkedin.com/in/muhammad-raza-07/)._
+_If you share this on X, tag me [@muhammad_o7](https://twitter.com/muhammad_o7) - I'd love to see your thoughts! You can also connect with me on [LinkedIn](https://www.linkedin.com/in/muhammad-raza-07/)._
 
 **Note: Want to be notified about posts like this? Subscribe to my RSS feed or leave your email [here](https://forms.gle/M1EK61LLCxJ3iTiD7)**
