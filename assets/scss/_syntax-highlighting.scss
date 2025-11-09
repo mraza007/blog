@@ -27,31 +27,25 @@
     }
   }
 
-  // Table layout for line numbers - only remove padding when table exists
+  // Table layout for line numbers
+  .highlight > pre {
+    padding: 0;
+  }
+
   table {
     margin: 0;
     border-spacing: 0;
     width: 100%;
     border: none;
-    display: table;
 
     tbody {
-      display: table-row-group;
-    }
-
-    tr {
-      display: table-row;
+      display: table;
+      width: 100%;
     }
 
     td {
       padding: 0;
       border: none;
-      display: table-cell;
-    }
-
-    pre {
-      padding: 0;
-      overflow-x: auto;
     }
   }
 
@@ -64,20 +58,19 @@
     user-select: none;
     width: 1%;
     min-width: 3em;
-    vertical-align: top;
 
     pre {
       margin: 0;
       padding: 0;
       color: var(--code-color);
       opacity: 0.5;
-      overflow-x: visible;
     }
 
     .lineno {
       color: var(--code-color);
       opacity: 0.5;
       display: block;
+      line-height: 1.5;
     }
   }
 
@@ -85,7 +78,6 @@
   .code {
     padding: 1em;
     width: 100%;
-    vertical-align: top;
 
     pre {
       margin: 0;
