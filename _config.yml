@@ -18,14 +18,6 @@ permalink   : /:year/:title/
 markdown    : kramdown
 highlighter : rouge
 
-# Kramdown settings
-kramdown:
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
-      start_line: 1
-
 
 source      : ./
 destination : ./_site
