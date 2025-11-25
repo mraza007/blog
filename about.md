@@ -85,6 +85,54 @@ My skills include,
 * `Linux`
 * I constantly try to learn new skills and hold 3 different AWS Certifications such as AWS Cloud Practitioner, AWS Solutions Architect and AWS Developer Associate
 
+---
+
+## Currently Available for DevOps Consulting
+
+I am a Senior DevOps Engineer and former AWS Professional Services Consultant with **5 years of extensive experience** in cloud infrastructure, serverless technologies, and DevOps automation. I have worked with numerous AWS customers to implement cutting-edge technology solutions in the cloud.
+
+### Key Qualifications:
+
+**CI/CD Expertise**: Successfully implemented CI/CD solutions that significantly improved software delivery processes, enabling faster and more reliable deployments.
+
+**Infrastructure Management and IaC**: Experienced in managing complex infrastructure and developing Infrastructure as Code (IaC) solutions using Terraform and CloudFormation, ensuring automated, consistent, and version-controlled resource deployment.
+
+**Deployment Management**: Proven track record of managing deployments across AWS services, with deep expertise in ECS Fargate and optimizing container-based applications for scalability and performance.
+
+**AWS Certifications**: AWS-certified professional holding three certifications, with a comprehensive understanding of AWS best practices and service offerings.
+
+**Cost Optimization**: Helped multiple clients streamline and optimize cloud costs by applying cost allocation tags, right-sizing resources, and improving overall cost management.
+
+### Notable Achievements:
+
+- Streamlined a development agency's entire DevOps infrastructure using Terraform, reducing their go-to-market time for launching new applications. Their infrastructure is now fully provisioned and version-controlled in Git.
+- Built CI/CD pipelines and fully automated software delivery processes for multiple clients, improving efficiency and reliability.
+- Hands-on experience with major AWS services, including ECS, EC2, CloudWatch, Lambda, and EKS.
+- Optimized AWS cloud spend from $5,000 per month to $1,500 by analyzing resource usage and implementing right-sizing strategies to prevent over-provisioning.
+- Worked extensively with ECS workloads, deploying numerous applications with full automation. Recently helped a client spin up a complete data infrastructure via Terraform, including AWS Glue, AWS MWAA, and all relevant architectural components to support their ETL pipelines.
+
+### Services I Offer:
+
+- **CI/CD Pipeline Design & Implementation** (GitHub Actions, GitLab CI, Jenkins)
+- **Infrastructure as Code** (Terraform, CloudFormation, AWS CDK)
+- **AWS Cloud Architecture & Migration**
+- **Container Orchestration** (ECS, EKS, Kubernetes)
+- **AI Agents for DevOps Automation**
+- **Python Automation & Tooling**
+- **Cost Optimization & Cloud Spend Management**
+- **Serverless Architecture** (Lambda, AWS Glue, MWAA)
+
+### Ready to Work Together?
+
+If you need help with CI/CD, automation, infrastructure, or AI agents for your DevOps workflows, I'd love to discuss how I can help your team.
+
+**Contact me**:
+- Email: [muhammadraza0047@gmail.com](mailto:muhammadraza0047@gmail.com)
+- X/Twitter: [@muhammad_o7](https://twitter.com/muhammad_o7)
+- LinkedIn: [Muhammad Raza](https://www.linkedin.com/in/muhammad-raza-07/)
+
+---
+
 Lastly this was my work experience, Furthermore, In my free time I usually spend my time reading blogs/articles and tech related internet discussions. I also contribute to opensource such as improving the documentation or working on issues and creating new resources for beginners.
 
 Most of my projects are available on GitHub. You can view here **[GITHUB LINK](https://github.com/mraza007)**
