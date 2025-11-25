@@ -20,11 +20,11 @@
   .logo {
     margin: 0;
     font-size: 1.25rem;
-    
+
     a {
       color: var(--heading-color);
       text-decoration: none;
-      
+
       span {
         color: var(--link-color);
       }
@@ -67,7 +67,7 @@
       background: var(--bg-color);
       padding: 1rem;
       border-bottom: 1px solid var(--border-color);
-      
+
       &.active {
         display: flex;
         flex-direction: column;
@@ -81,7 +81,7 @@
         color: var(--text-color);
         text-decoration: none;
         font-weight: 500;
-        
+
         &:hover {
           color: var(--link-color);
         }
@@ -99,7 +99,7 @@
       color: var(--text-color);
       opacity: 0.7;
       transition: opacity 0.3s ease;
-      
+
       &:hover {
         opacity: 1;
       }
@@ -108,7 +108,7 @@
         width: 20px;
         height: 20px;
         transition: transform 0.3s ease;
-        
+
         &:hover {
           transform: rotate(12deg);
         }
@@ -122,10 +122,11 @@
         .sun-icon {
           display: none;
         }
+
         .moon-icon {
           display: block;
         }
       }
     }
   }
-} 
+}

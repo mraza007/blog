@@ -1093,6 +1093,7 @@ This is getting close to a real CI/CD runner. Let's add one more version with pr
 
 Let's add the final touches: environment variables, branch filtering, timeouts, and better error handling:
 
+{% raw %}
 ```python
 #!/usr/bin/env python3
 """
@@ -1498,6 +1499,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+{% endraw %}
 
 #### Testing Version 5
 
