@@ -3,18 +3,53 @@ layout: page
 title: Work
 permalink: /work/
 ---
-Hi! Its Muhammad. I am recent graduate from Queens College,where I studied Economics and Computer Science. On this page you can read more about my work experience and if you like a copy of my resume feel free to [email me](mailto:muhammadraza0047@gmail.com).
+Hi! I'm Muhammad, a Senior DevOps Engineer and former AWS Professional Services Consultant with **5 years of experience** in cloud infrastructure, CI/CD, and DevOps automation. I studied Economics and Computer Science at Queens College.
+
+On this page you can read more about my work experience. If you'd like a copy of my resume, feel free to [email me](mailto:muhammadraza0047@gmail.com).
+
+---
+
+## Currently Available for DevOps Consulting
+
+### Services I Offer:
+
+- **CI/CD Pipeline Design & Implementation** (GitHub Actions, GitLab CI, Jenkins)
+- **Infrastructure as Code** (Terraform, CloudFormation, AWS CDK)
+- **AWS Cloud Architecture & Migration**
+- **Container Orchestration** (ECS, EKS, Kubernetes)
+- **Python Backend Development & Automation**
+- **Cost Optimization & Cloud Spend Management**
+- **Serverless Architecture** (Lambda, AWS Glue, MWAA)
+
+### Notable Achievements:
+
+- Streamlined a development agency's entire DevOps infrastructure using Terraform, reducing their go-to-market time for launching new applications.
+- Optimized AWS cloud spend from **$5,000/month to $1,500** by analyzing resource usage and implementing right-sizing strategies.
+- Built CI/CD pipelines and fully automated software delivery processes for multiple clients.
+- Deployed complete data infrastructure via Terraform, including AWS Glue, AWS MWAA, and ETL pipeline components.
+
+### Ready to Work Together?
+
+If you need help with CI/CD, automation, infrastructure, or Python backend development, I'd love to discuss how I can help your team.
+
+**Contact me**:
+- Email: [muhammadraza0047@gmail.com](mailto:muhammadraza0047@gmail.com)
+- X/Twitter: [@muhammad_o7](https://twitter.com/muhammad_o7)
+- LinkedIn: [Muhammad Raza](https://www.linkedin.com/in/muhammad-raza-07/)
+
+---
+
+## Work Experience
 
 ### `Professional Services Consultant (Application Developer)` @ Amazon Web Services _**06/2022 - 07/2023**_
 
-  - Migrated Cloudformation resources onto Cloudformation Registry using Java, enabling seamless 3rd party integration with Cloudformation.
-  - Significantly contributed to the successful migration of high-volume AWS resources including `AWS::CodeDeploy::Application`
-  `AWS::EC2::Volume`, and `AWS::IAM::InstanceProfile`, which are currently utilized by millions of customers.
-  - Streamlined project documentation, reducing onboarding time from 3 months to just 1 month, enabling faster developer onboarding and project ramp-up.
- - Implemented automation scripts that significantly reduced deployment efforts, automated tedious tasks, and streamlined the deployment process, resulting in a notable decrease in manual effort.
-  - Leveraged Jupyter notebooks to streamline deployment troubleshooting and gather valuable insights into production resources.
-  - Successfully led a team of six developers as a tenured consultant on the project, overseeing the seamless migration of CloudFormation resources onto CloudFormation Registry.
- - Apart from my customer work, I also mentored new hires on the team, enabling them to quickly ramp up their skills and contribute effectively to different customer projects.
+- Migrated CloudFormation resources onto CloudFormation Registry using Java, enabling seamless 3rd party integration with CloudFormation.
+- Significantly contributed to the successful migration of high-volume AWS resources including `AWS::CodeDeploy::Application`, `AWS::EC2::Volume`, and `AWS::IAM::InstanceProfile`, which are currently utilized by millions of customers.
+- Streamlined project documentation, reducing onboarding time from 3 months to just 1 month.
+- Implemented automation scripts that significantly reduced deployment efforts and streamlined the deployment process.
+- Leveraged Jupyter notebooks to streamline deployment troubleshooting and gather insights into production resources.
+- Led a team of six developers, overseeing the seamless migration of CloudFormation resources onto CloudFormation Registry.
+- Mentored new hires on the team, enabling them to quickly ramp up and contribute to customer projects.
 
 *Note: It's the same role but different specialization*
 
@@ -25,9 +60,9 @@ Hi! Its Muhammad. I am recent graduate from Queens College,where I studied Econo
 - Collaborated with an external customer to rewrite AWS CDK constructs from `Python` to `TypeScript`.
 - Leveraged `JSII` to convert `CDK` Constructs to other languages, including `C#` and `Java`, making it easier for the customer to use AWS CDK. Specifically, I rewrote the custom AWS RDS python construct in `TypeScript`, and then used `JSII` to convert it to `Java` and `C#`, significantly reducing 
 deployment times for the customer’s DBA teams from weeks to minutes.
-- Also wrote different CDK Constructs, For instance ALB+ECS Construct helping customer deploy applications on ECS behing an ALB.
-- Implemented CICD pipelines for the customer, reducing manual deployment efforts and streamlining the deployment process and also developed a Github Actions Template repository helping developers to setup their own CI/CD when deploying applications
-- Also Led Weekly Team meetings increasing team engagement while working remotely
+- Wrote CDK Constructs such as ALB+ECS Construct, helping customers deploy applications on ECS behind an ALB.
+- Implemented CI/CD pipelines for the customer, reducing manual deployment efforts. Also developed a GitHub Actions template repository helping developers set up their own CI/CD pipelines.
+- Led weekly team meetings, increasing team engagement while working remotely.
 
 ---
 
@@ -72,19 +107,40 @@ During my time as intern at `AWS`, I worked on the following:
 
 
 ### Skills
-My skills include,
-* `PYTHON`
-* `DJANGO`
-* `FLASK`
-* `PANDAS`
-* `HTML & CSS`
-* Working with Databases such as `MariaDB`,`Postgres`
-* A little bit of `NodeJS` and `TypeScript`
-* `Java`
-* `SciKit Learn`
-* `Linux`
-* I constantly try to learn new skills and hold 3 different AWS Certifications such as AWS Cloud Practitioner, AWS Solutions Architect and AWS Developer Associate
 
-Lastly this was my work experience, Furthermore, In my free time I usually spend my time reading blogs/articles and tech related internet discussions. I also contribute to opensource such as improving the documentation or working on issues and creating new resources for beginners.
+**Cloud & Infrastructure**
+- AWS (ECS, EC2, Lambda, EKS, CloudWatch, Glue, MWAA)
+- Terraform, CloudFormation, AWS CDK
+
+**CI/CD & Automation**
+- GitHub Actions, GitLab CI, Jenkins
+- Python scripting, Bash
+
+**Containers & Orchestration**
+- Docker, ECS Fargate, Kubernetes, EKS
+
+**Languages**
+- Python (primary), TypeScript, Java
+
+**Backend & Frameworks**
+- Django, Flask, FastAPI
+- Pandas, Scikit-Learn
+
+**Tools**
+- Linux, Git, Docker
+
+**Databases**
+- PostgreSQL, MariaDB
+
+**Certifications**
+- AWS Solutions Architect Associate
+- AWS Developer Associate
+- AWS Cloud Practitioner
+
+---
+
+## Open Source & Projects
+
+In my free time I read blogs/articles and participate in tech discussions. I also contribute to open source by improving documentation, working on issues, and creating resources for beginners.
 
 Most of my projects are available on GitHub. You can view here **[GITHUB LINK](https://github.com/mraza007)**
