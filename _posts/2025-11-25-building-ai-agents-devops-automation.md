@@ -7,7 +7,7 @@ tags: [ai, devops, automation, python]
 comments: true
 ---
 
-In my previous post, I showed you how to build a CI/CD pipeline runner from scratch in Python. We built something powerful: a system that could orchestrate jobs, manage dependencies, and pass artifacts between stages. It was the muscles of your deployment workflow.
+In my previous post, I showed you how to build a [CI/CD pipeline runner from scratch in Python](https://muhammadrazame.github.io/blog/2025/11/24/building-ci-cd-pipeline-runner-from-scratch-in-python/). We built something powerful: a system that could orchestrate jobs, manage dependencies, and pass artifacts between stages. It was the muscles of your deployment workflow.
 
 But here's the problem: that pipeline runner can only do exactly what you tell it to do.
 
