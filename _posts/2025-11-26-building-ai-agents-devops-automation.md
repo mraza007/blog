@@ -1465,4 +1465,12 @@ What are you waiting for? Give your CI/CD pipeline a brain.
 
 ---
 
-**Questions or feedback?** Find me on [GitHub](https://github.com/mraza007) or connect with me on [LinkedIn](https://linkedin.com/in/muhammad-raza).
+## Want to Learn More?
+
+If you're interested in deepening your DevOps and systems programming knowledge, check out [Educative.io's Unlimited Plan](https://www.educative.io/unlimited?aff=BYvq) - it's an excellent resource for hands-on learning with interactive courses.
+
+---
+
+**If you found this helpful, share it on X and tag me [@muhammad_o7](https://twitter.com/muhammad_o7)** - I'd love to hear your thoughts! You can also connect with me on [LinkedIn](https://www.linkedin.com/in/muhammad-raza-07/).
+
+**Need Help?** I'm available for Python and DevOps consulting. If you need help with CI/CD, automation, infrastructure, or AI agents for your DevOps workflows, reach out via email or DM me on [X/Twitter](https://twitter.com/muhammad_o7).
