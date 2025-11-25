@@ -4,11 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- plausible analytics -->
-  <script
-    defer
-    data-domain="muhammadraza.me"
-    src="https://plausible.io/js/script.js"
-  ></script>
+  <script defer data-domain="muhammadraza.me" src="https://plausible.io/js/script.js"></script>
   {% assign page_title = '' %} {% if page.title == "Home" %} {% capture
   page_title %} {{ site.title_left }}{{ site.title_right }} | {{
   site.description }} {%if paginator and paginator.page != 1 %} - {{
@@ -31,10 +27,7 @@
   escape | strip_newlines }} {% endcapture %}
 
   <meta name="description" content="{{ page_description }}" />
-  <meta
-    name="keywords"
-    content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}"
-  />
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}" />
 
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -49,19 +42,14 @@
   {% if page.id %}
   <meta property="og:type" content="article" />
   <meta property="article:author" content="{{ site.author.name }}" />
-  <meta
-    property="article:section"
-    content="{{ page.categories | join: ', ' }}"
-  />
+  <meta property="article:section" content="{{ page.categories | join: ', ' }}" />
   <meta property="article:tag" content="{{ page.keywords }}" />
   <meta property="article:published_time" content="{{ page.date }}" />
   {% else%}
   <meta property="og:type" content="website" />
   {% endif %}
-  <meta
-    property="og:url"
-    content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
-  />
+  <meta property="og:url"
+    content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
   <meta property="og:title" content="{{ page_title }}" />
   <meta property="og:image" content="{{ page_image }}" />
   <meta property="og:description" content="{{ page_description }}" />
@@ -80,26 +68,62 @@
   <meta itemprop="description" content="{{ page_description }}" />
   <meta itemprop="image" content="{{ page_image }}" />
 
+  <!-- JSON-LD Structured Data for Consulting Services -->
+  {% if page.url == "/" or page.url == "/work/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Muhammad Raza - DevOps Consulting",
+    "description": "Senior DevOps Engineer offering consulting services for CI/CD pipelines, infrastructure automation, AWS architecture, and Python backend development.",
+    "url": "https://muhammadraza.me/work/",
+    "telephone": "",
+    "email": "muhammadraza0047@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "addressCountry": "US"
+    },
+    "priceRange": "$$",
+    "serviceType": ["DevOps Consulting", "CI/CD Pipeline Design", "AWS Architecture", "Infrastructure as Code", "Python Automation"],
+    "areaServed": "Worldwide",
+    "sameAs": [
+      "https://twitter.com/muhammad_o7",
+      "https://www.linkedin.com/in/muhammad-raza-07/",
+      "https://github.com/mraza007"
+    ]
+  }
+  </script>
+  {% endif %}
+  {% if page.id %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ page.title | escape }}",
+    "description": "{{ page_description }}",
+    "author": {
+      "@type": "Person",
+      "name": "Muhammad Raza",
+      "url": "https://muhammadraza.me/work/"
+    },
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}"
+  }
+  </script>
+  {% endif %}
+
   <!-- Canonical link tag -->
-  <link
-    rel="canonical"
-    href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
-  />
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
   <link rel="alternate" type="application/rss+xml" title="{{ site.title_left
-  }}{{ site.title_right }}" href="{{ "/feed.xml" | prepend: site.baseurl |
-  prepend: site.url }}">
+  }}{{ site.title_right }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
   <!-- rel prev and next -->
   {% if paginator.previous_page %}
-  <link
-    rel="prev"
-    href="{{ paginator.previous_page_path | prepend: site.baseurl | prepend: site.url }}"
-  />
+  <link rel="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl | prepend: site.url }}" />
   {% endif %} {% if paginator.next_page %}
-  <link
-    rel="next"
-    href="{{ paginator.next_page_path | prepend: site.baseurl | prepend: site.url }}"
-  />
-  {% endif %} <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend:
-  site.baseurl | prepend: site.url }}">
+  <link rel="next" href="{{ paginator.next_page_path | prepend: site.baseurl | prepend: site.url }}" />
+  {% endif %}
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl | prepend: site.url }}">
 </head>
