@@ -1,0 +1,45 @@
+<style>
+    .toc {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 4px;
+        padding: 1em;
+        margin-bottom: 2em
+    }
+
+    .toc summary {
+        cursor: pointer;
+        font-weight: bold
+    }
+
+    .toc ul {
+        margin: .5em 0 0 0;
+        padding-left: 1.5em;
+        list-style: none
+    }
+
+    .toc li {
+        margin: .3em 0
+    }
+
+    .toc a {
+        text-decoration: none;
+        color: #333
+    }
+
+    .toc a:hover {
+        text-decoration: underline
+    }
+
+    .toc .toc-h3 {
+        padding-left: 1em;
+        font-size: .95em
+    }
+</style>
+<nav class="toc" id="toc" style="display:none">
+    <details open>
+        <summary>Table of Contents</summary>
+        <ul id="toc-list"></ul>
+    </details>
+</nav>
+<script>window.addEventListener("load", function () { var t = document.getElementById("toc"), l = document.getElementById("toc-list"), c = document.querySelector(".post-content"); if (t && l && c) { var h = c.querySelectorAll("h2,h3"); if (h.length >= 3) { for (var i = 0; i < h.length; i++) { var e = h[i]; e.id || (e.id = "s" + i); var a = document.createElement("li"); e.tagName === "H3" && (a.className = "toc-h3"); var n = document.createElement("a"); n.href = "#" + e.id; n.textContent = e.textContent; a.appendChild(n); l.appendChild(n.parentNode) } t.style.display = "block" } } });</script>
