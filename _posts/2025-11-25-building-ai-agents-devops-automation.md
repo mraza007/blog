@@ -87,7 +87,7 @@ Every AI agent operates in a continuous cycle:
 ```
 ┌─────────────────────────────────────────────────────┐
 │                                                     │
-│  Observe → Reason → Plan → Act → Observe (repeat)  │
+│  Observe → Reason → Plan → Act → Observe (repeat)   │
 │                                                     │
 └─────────────────────────────────────────────────────┘
 ```
@@ -1429,19 +1429,19 @@ This lets your agent learn from experience.
 
 **LangChain Documentation**
 
-- Official docs: https://python.langchain.com/docs
-- Agents guide: https://python.langchain.com/docs/modules/agents
-- Tools documentation: https://python.langchain.com/docs/modules/tools
+- [LangChain Official Docs](https://python.langchain.com/docs)
+- [LangChain Agents Guide](https://python.langchain.com/docs/modules/agents)
+- [LangChain Tools Documentation](https://python.langchain.com/docs/modules/tools)
 
 **OpenRouter**
 
-- Get API key: https://openrouter.ai
-- Pricing: https://openrouter.ai/docs#pricing
-- Model comparison: https://openrouter.ai/models
+- [Get API key](https://openrouter.ai)
+- [Pricing](https://openrouter.ai/docs#pricing)
+- [Model comparison](https://openrouter.ai/models)
 
 **Security Resources**
 
-- OWASP LLM Top 10: https://owasp.org/www-project-top-10-for-large-language-model-applications
+- [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications)
 
 ## Final Thoughts
 
