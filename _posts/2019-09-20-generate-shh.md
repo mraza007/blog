@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Generating SSH Keys for you Machine
+title: Generating SSH Keys for Your Machine
+description: "Quick guide to generating SSH public and private key pairs using ssh-keygen on Linux. Understand id_rsa and id_rsa.pub files."
 tags : [linux]
 ---
 

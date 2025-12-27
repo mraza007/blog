@@ -37,7 +37,30 @@ Now this command while run our smtp server locally which we can use to test emai
 
 Once we have `smtpd` running, we can write a simple script to test it. 
 
-<script src="https://gist.github.com/mraza007/daa95799efe7586b4f6c7d9bbf0d9d87.js"></script>
+```python
+import smtplib
+from email.mime.text import MIMEText
+
+# Set up the email content
+subject = "Test Email"
+body = "This is a test email\n Hello World"
+sender_email = "testing_email@xyz.com"
+receiver_email = "recipient_test@abc.com"
+
+message = MIMEText(body)
+message["Subject"] = subject
+message["From"] = sender_email
+message["To"] = receiver_email
+
+# Connect to the local SMTP server
+server = smtplib.SMTP("localhost", 1025)
+
+# Send the email
+server.sendmail(sender_email, [receiver_email], message.as_string())
+
+# Disconnect from the server
+server.quit()
+```
 
 After creating that script you can simply run it. Once you run it you should see the following output on terminal where your `smtpd` command is running.
 

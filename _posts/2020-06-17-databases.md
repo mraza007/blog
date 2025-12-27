@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Databases (AWS Services)
+description: "Overview of AWS database services including RDS, DynamoDB, RedShift, and purpose-built databases like QLDB and DocumentDB with use cases for each."
 tags : [aws]
 published: true
 ---

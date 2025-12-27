@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Using Regex To Extract Links.
-tags : [linux]
+description: "Learn how to extract URLs from text using regular expressions in Python. Quick regex pattern for matching HTTP, HTTPS, and FTP links."
+tags : [linux, python]
 ---
 
 In order to extract links from a file we can use regular expressions

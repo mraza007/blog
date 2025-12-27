@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "My Favorites Pandas Tricks"
+title: "My Favorite Pandas Tricks"
+description: "Useful Pandas tricks for data analysis: finding unique values, filtering data with conditions, and saving results to CSV files."
 tags : [python]
 ---
 

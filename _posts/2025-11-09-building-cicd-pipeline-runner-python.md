@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Building a CI/CD Pipeline Runner from Scratch in Python"
-description: "Understanding how GitLab Runner and GitHub Actions work by building a complete CI/CD pipeline runner in Python with parallel execution, dependencies, and artifacts"
-keywords: "python cicd devops gitlab-runner github-actions pipelines automation systems-programming"
+description: "Learn how GitLab Runner and GitHub Actions work internally by building your own CI/CD pipeline runner in Python. Covers parallel execution, job dependencies, artifact passing, and topological sorting."
+keywords: "build your own gitlab runner python, how cicd pipeline works internally, cicd pipeline tutorial from scratch, gitlab runner python implementation, build pipeline runner, python cicd devops github-actions automation"
 tags: [python, devops]
 comments: true
 ---
@@ -1860,11 +1860,11 @@ I also recommend reading about:
 
 Want to take this further? Here are some ideas:
 
-1. **Add a web UI**: Use Flask + WebSockets for real-time pipeline visualization
-2. **Implement caching**: Cache pip/npm packages between runs
-3. **Add distributed execution**: Run jobs across multiple machines
-4. **Build a webhook server**: Trigger on git push events
-5. **Create a VS Code extension**: Visualize pipelines in your editor
+1. **Add AI-powered failure investigation**: In my follow-up post, I show how to [build AI agents that automatically investigate pipeline failures](/2025/building-ai-agents-devops-automation/) using LangChain and GitHub Actions integration.
+2. **Deploy to production**: If you're deploying Python apps to AWS, check out my guide on [ECS decisions that waste 6 weeks](/2025/ecs-decisions-that-waste-6-weeks/) - including GitHub Actions deployment patterns.
+3. **Add a web UI**: Use Flask + WebSockets for real-time pipeline visualization
+4. **Implement caching**: Cache pip/npm packages between runs
+5. **Add distributed execution**: Run jobs across multiple machines
 
 Let me know in the comments what you'd like to see next!
 

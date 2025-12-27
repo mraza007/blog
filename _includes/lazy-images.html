@@ -1,0 +1,16 @@
+<!-- Lazy Loading for Images -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add lazy loading to all images in post content
+    var images = document.querySelectorAll('.post-content img, article img');
+    for (var i = 0; i < images.length; i++) {
+        if (!images[i].hasAttribute('loading')) {
+            images[i].setAttribute('loading', 'lazy');
+        }
+        // Add decoding async for better performance
+        if (!images[i].hasAttribute('decoding')) {
+            images[i].setAttribute('decoding', 'async');
+        }
+    }
+});
+</script>

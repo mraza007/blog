@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Jupyter Keyshortcuts"
-tags : [jupyter]
+title: "Jupyter Keyboard Shortcuts"
+description: "Essential Jupyter notebook keyboard shortcuts and magic commands including cell execution, debugging with pdb, and HTML rendering."
+tags : [python, jupyter]
 ---
 
 There are certain jupyter key shortcuts/tricks that helps developers remain more productive.

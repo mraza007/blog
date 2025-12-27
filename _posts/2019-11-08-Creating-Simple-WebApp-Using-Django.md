@@ -165,7 +165,63 @@ Once we have created `templates/` we need to create another folder within that d
 
 After creating the directory and file now paste the following code in the file.
 
-<script src="https://gist.github.com/mraza007/58b943346401538be20ab77053328c6d.js"></script>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CryptoCurrency News</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+<section class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        CryptoCurrency News
+      </h1>
+      <h2 class="subtitle">
+        Bitcoin News From Major News Sources
+      </h2>
+    </div>
+  </div>
+</section>
+<div class="container">
+<div class=columns>
+<div class="column">
+<div class="box">
+		{% for key in data.articles%}
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="{{key.urlToImage}}" alt="Image">
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{key.author}}</strong> <small>@{{key.source.name}}</small> <small>{{key.publishedAt}}</small>
+          <br>
+         {{key.title}}
+         <br>
+         <a href="{{key.url}}">{{key.url}}</a>
+         <br>
+         {{key.description}}
+        </p>
+      </div>
+    </div>
+  </article>
+		{%endfor%}
+
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+```
 
 So I am using [Bulma](https://bulma.io/) to make it look clean. Furthermore as you have noticed that django uses jinja templating engine to render dynamic data from the `database` or `api`.
 
