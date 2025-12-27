@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "A script that allows you lowercase file names"
-tags : [linux]
+title: "Bash Script to Lowercase Filenames"
+description: "Simple bash script to convert all filenames in a directory to lowercase using tr command. Useful for organizing files."
+tags : [linux, bash]
 ---
 
 A simple script that allows you turn all the files names to lowercase

@@ -1,0 +1,24 @@
+<!-- Applause Button - Simple button style like Buy Me a Coffee -->
+<link rel="stylesheet" href="https://unpkg.com/applause-button/dist/applause-button.css">
+<script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
+
+<div class="applause-wrapper">
+    <applause-button class="applause-btn" color="#0066cc" multiclap="true"></applause-button>
+</div>
+
+<style>
+    .applause-wrapper {
+        margin: 2em 0;
+    }
+
+    .applause-btn {
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    /* Override default circular style to button style */
+    .applause-btn .style-root {
+        border-radius: 8px !important;
+    }
+</style>

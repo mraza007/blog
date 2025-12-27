@@ -1,25 +1,51 @@
 table {
   border-collapse: collapse;
   font-feature-settings: "kern", "liga", "tnum";
-  margin: $small-spacing 0;
-  table-layout: fixed;
+  margin: 1.5em 0;
   width: 100%;
+  border: 1px solid var(--table-border, #dee2e6);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 th {
-  border-bottom: 1px solid shade($base-border-color, 25%);
-  font-weight: 600;
-  padding: $small-spacing 0;
+  background: var(--table-stripe, #f8f9fa);
+  border-bottom: 2px solid var(--table-border, #dee2e6);
+  font-weight: 700;
+  padding: 0.75em 1em;
   text-align: left;
 }
 
 td {
-  border-bottom: $base-border;
-  padding: $small-spacing 0;
+  border-bottom: 1px solid var(--table-border, #dee2e6);
+  padding: 0.75em 1em;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background: var(--table-stripe, #f8f9fa);
+}
+
+// Highlight total/summary rows
+tr:last-child td,
+tr:last-child th {
+  font-weight: 600;
 }
 
 tr,
 td,
 th {
   vertical-align: middle;
+}
+
+// Responsive tables
+@media (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }

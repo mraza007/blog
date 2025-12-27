@@ -21,7 +21,6 @@ layout: default
     </div>
   </header>
   <div class="post-content" itemprop="articleBody">
-    {% include toc.html %}
     {{ content }}
     {% include author-bio.html %}
 
@@ -37,4 +36,6 @@ layout: default
 </article>
 
 {% include code-copy.html %}
+{% include lazy-images.html %}
+{% include back-to-top.html %}
 {% include comments.html %}

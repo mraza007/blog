@@ -1,14 +1,14 @@
 <nav class="nav">
   <div class="container">
     <h1 class="logo">
-      <a href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+      <a href="{{ '/' | prepend: site.baseurl | prepend: site.url }}"{% if page.url == "/" %} class="active"{% endif %}>
         {{ site.title_left }}<span>{{ site.title_right }}</span>
       </a>
     </h1>
 
     <ul class="navbar" id="navbar">
-      <li><a href="{{ '/work' | prepend: site.baseurl | prepend: site.url }}">Work</a></li>
-      <li><a href="/tags/">Tags</a></li>
+      <li><a href="{{ '/work' | prepend: site.baseurl | prepend: site.url }}"{% if page.url == "/work/" %} class="active"{% endif %}>Work</a></li>
+      <li><a href="/tags/"{% if page.url contains "/tags" %} class="active"{% endif %}>Tags</a></li>
       <li><a href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" target="_blank">RSS</a></li>
       <li><a href="mailto:muhammadraza0047@gmail.com?subject=Opportunity">Hire Me</a></li>
     </ul>

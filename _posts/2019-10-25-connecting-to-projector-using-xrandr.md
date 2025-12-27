@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Connecting to Projector using XRANDR
+description: "How to connect to an external monitor or projector on Linux using xrandr command line utility with auto-scaling resolution."
 tags : [linux]
 ---
 

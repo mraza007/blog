@@ -80,7 +80,7 @@ GitHub Actions has an official AWS action that handles ECS deployments:
 
 That's the whole thing. It registers your task definition, updates the service, and waits for the deployment to stabilize. AWS maintains it. It works.
 
-Your deployment workflow lives in your repo, your team already knows GitHub Actions from running tests, and you're not managing another piece of infrastructure.
+Your deployment workflow lives in your repo, your team already knows GitHub Actions from running tests, and you're not managing another piece of infrastructure. If you want to understand how these pipeline runners actually work internally, I wrote a deep dive on [building a CI/CD pipeline runner from scratch in Python](/2025/building-cicd-pipeline-runner-python/).
 
 If you're on GitLab, use GitLab CI. If you're on Bitbucket, use Bitbucket Pipelines. The point is: use whatever's already integrated with your code. Don't add complexity.
 
