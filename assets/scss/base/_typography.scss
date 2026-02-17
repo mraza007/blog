@@ -130,7 +130,11 @@ dl {
     margin-top: 0;
     margin-left: 1.2em;
     margin-bottom: 1rem;
-    list-style-type: square;
+    list-style-type: disc;
     list-style-position: outside;
     list-style-image: none;
+}
+
+ol {
+    list-style-type: decimal;
 }

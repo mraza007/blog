@@ -18,10 +18,10 @@ body {
 }
 
 hr {
-  border-top: none;
-  border-bottom: 2px solid var(--border-color);
+  border: none;
+  border-bottom: 1px solid var(--border-color);
   width: 100%;
-  margin: $small-spacing 0;
+  margin: $base-spacing 0;
 }
 
 .container {
@@ -47,18 +47,26 @@ hr {
 }
 
 .intro {
-  .author-name {
-    display: inline-block;
-    padding: 0 .2em;
-    background: var(--blockquote-bg);
-  }
-
-  a {
-    @extend .link;
-  }
-
   .container {
     padding-bottom: 0;
+    padding-top: 2.5em;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--heading-color);
+    margin-bottom: 1em;
+  }
+
+  .intro-cta {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.95rem;
+
+    a {
+      @extend .link;
+    }
   }
 }
 
@@ -102,10 +110,13 @@ hr {
 
   .date-label {
     padding: 0;
-    margin-left: 1.5em;
+    margin-left: 2em;
     color: var(--text-color);
-    opacity: 0.5;
-    font-size: 0.85em;
+    opacity: 0.4;
+    font-size: 0.8em;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
     white-space: nowrap;
   }
 }
@@ -132,9 +143,6 @@ hr {
   @extend .link;
 }
 
-.post {
-}
-
 .pagination {
   li, a, span {
     display: inline-block;
@@ -151,20 +159,52 @@ hr {
 }
 
 .share {
-  border-top: 0.2em dashed var(--border-color);
+  border-top: 1px solid var(--border-color);
   padding-top: $base-spacing;
   margin-top: $base-spacing * 2;
 
   p {
-    margin: 0 5em;
-    font-size: rem(14);
+    font-size: 0.9rem;
     color: var(--text-color);
     opacity: 0.6;
   }
 }
 
+.author-bio {
+  background: var(--blockquote-bg);
+  border-radius: 8px;
+  padding: 1.5em 2em;
+  margin: 2.5em 0;
+
+  h4 {
+    margin: 0 0 0.75em 0;
+    color: var(--heading-color);
+    font-size: 1rem;
+  }
+
+  p {
+    color: var(--text-color);
+    opacity: 0.85;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .author-links {
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    a {
+      font-size: 0.9rem;
+    }
+  }
+}
+
 .site-footer {
   padding: $base-spacing 0;
+  margin-top: $base-spacing * 2;
+  border-top: 1px solid var(--border-color);
 
   a {
     @extend .link;
@@ -174,11 +214,7 @@ hr {
     display: block;
     font-size: rem(12);
     color: var(--text-color);
-    opacity: 0.6;
-  }
-
-  .block {
-    display: block;
+    opacity: 0.4;
   }
 }
 
