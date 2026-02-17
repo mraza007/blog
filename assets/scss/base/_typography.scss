@@ -91,7 +91,7 @@ code {
   background: none;
   border-radius: 3px;
   border: none;
-  font-family: "SFMono-Regular",Menlo,Consolas,"Inconsolata",monospace;
+  font-family: $code-font-family;
   font-size: 0.9em;
   margin: 0;
   padding: 0 5px;
@@ -100,7 +100,7 @@ code {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  font-family: "SFMono-Regular",Menlo,Consolas,"Inconsolata",monospace;
+  font-family: $code-font-family;
   font-size: 0.9em;
   margin: 0 0 1.5em 0;
   overflow: auto;
