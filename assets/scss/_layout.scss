@@ -13,21 +13,6 @@ body {
   scroll-behavior: smooth;
 }
 
-.clearfix {
-  &:before {
-    content: " ";
-    display: table;
-  }
-
-  &:after {
-    content: " ";
-    display: table;
-    clear: both;
-  }
-
-  *zoom: 1;
-}
-
 body {
   background-color: var(--bg-color);
 }
@@ -45,14 +30,6 @@ hr {
   margin-right: auto;
   max-width: 800px;
   font-weight: normal;
-}
-
-.pull-left {
-  float: left;
-}
-
-.pull-right {
-  float: right;
 }
 
 .link {
@@ -156,7 +133,6 @@ hr {
 }
 
 .post {
-  @extend .clearfix;
 }
 
 .pagination {
@@ -187,18 +163,7 @@ hr {
   }
 }
 
-.disqus {
-  background-color: var(--blockquote-bg);
-  padding: $base-spacing 0;
-
-  hr {
-    margin: $base-spacing 0;
-  }
-}
-
 .site-footer {
-  @extend .clearfix;
-
   padding: $base-spacing 0;
 
   a {
