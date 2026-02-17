@@ -1,9 +1,9 @@
 {% if site.postshare_enabled %}
 <aside class="share">
-  <p>If you liked this article and think others should read it, please share it on <a
-      href="http://twitter.com/share?text={{page.title}}&amp;url={{ page.url | prepend: site.baseurl | prepend: site.url }}&amp;via={{ site.twitter_username }}"
-      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a> or <a
-      href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | prepend: site.baseurl | prepend: site.url }}"
-      onclick="window.open(this.href, 'facebook-share', 'width=550,height=235');return false;">Facebook</a>.</p>
+  <p>If you liked this article, share it on <a
+      href="https://twitter.com/intent/tweet?text={{page.title | uri_escape}}&amp;url={{ page.url | prepend: site.baseurl | prepend: site.url }}&amp;via={{ site.twitter_username }}"
+      onclick="window.open(this.href, 'x-share', 'width=550,height=435');return false;">X</a> or <a
+      href="https://news.ycombinator.com/submitlink?u={{ page.url | prepend: site.baseurl | prepend: site.url }}&amp;t={{page.title | uri_escape}}"
+      onclick="window.open(this.href, 'hn-share', 'width=550,height=435');return false;">Hacker News</a>.</p>
 </aside>
 {% endif %}

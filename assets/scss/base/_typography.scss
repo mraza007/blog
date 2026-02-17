@@ -16,28 +16,32 @@ h6 {
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: $small-spacing 0 $small-spacing 0;
-  font-weight: 700;
+  font-weight: 600;
+  color: var(--heading-color);
+  letter-spacing: -0.02em;
 }
 
 h1 {
   font-size: rem(30);
+  font-weight: 700;
 }
 
 h2 {
-  font-size: rem(26);
-}
-
-h3 {
   font-size: rem(24);
 }
 
-h4 {
+h3 {
   font-size: rem(20);
+}
+
+h4 {
+  font-size: rem(18);
 }
 
 h5,
 h6 {
-  font-size: rem(16);
+  font-size: rem(15);
+  letter-spacing: 0;
 }
 
 p {
@@ -101,13 +105,13 @@ code {
 pre {
   -webkit-overflow-scrolling: touch;
   font-family: $code-font-family;
-  font-size: 0.9em;
-  margin: 0 0 1.5em 0;
+  font-size: 0.85em;
+  line-height: 1.5;
+  margin: 0 0 1.25em 0;
   overflow: auto;
-  padding: 1em;
+  padding: 0.85em 1em;
   background: var(--code-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 3px;
+  border-radius: 8px;
 
   code {
     background: none;
