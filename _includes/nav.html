@@ -32,3 +32,14 @@
     </ul>
   </div>
 </nav>
+<script>
+(function() {
+  var btn = document.getElementById('mobile-menu-button');
+  var nav = document.getElementById('navbar');
+  if (btn && nav) {
+    btn.addEventListener('click', function() {
+      nav.classList.toggle('active');
+    });
+  }
+})();
+</script>
