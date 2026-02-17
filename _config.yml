@@ -35,15 +35,6 @@ plugins:
   - bourbon
   - jekyll-paginate
 
-# navbar pages
-navbar:
-  - slug: work
-    title: Work
-  - slug: blog
-    title: Blog
-  - slug: kb
-    title: KB
-
 exclude:
   [
     "vendor",
