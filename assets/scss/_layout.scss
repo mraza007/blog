@@ -13,30 +13,15 @@ body {
   scroll-behavior: smooth;
 }
 
-.clearfix {
-  &:before {
-    content: " ";
-    display: table;
-  }
-
-  &:after {
-    content: " ";
-    display: table;
-    clear: both;
-  }
-
-  *zoom: 1;
-}
-
 body {
-  background-color: $base-background-color;
+  background-color: var(--bg-color);
 }
 
 hr {
-  border-top: none;
-  border-bottom: 2px solid lighten($light-gray-color, 7%);
+  border: none;
+  border-bottom: 1px solid var(--border-color);
   width: 100%;
-  margin: $small-spacing 0;
+  margin: $base-spacing 0;
 }
 
 .container {
@@ -47,16 +32,8 @@ hr {
   font-weight: normal;
 }
 
-.pull-left {
-  float: left;
-}
-
-.pull-right {
-  float: right;
-}
-
 .link {
-  color: $blue-color;
+  color: var(--link-color);
   padding-bottom: .05em;
   border-bottom: 2px solid transparent;
 
@@ -65,75 +42,48 @@ hr {
   &:hover,
   &:focus,
   &:active {
-    border-bottom: 2px solid $blue-color;
+    border-bottom: 2px solid var(--link-color);
   }
-}
-
-.site-header {
-  border-bottom: 1px solid lighten($light-gray-color, 5%);
-  margin-bottom: $small-spacing;
-  min-height: 30px;
 }
 
 .intro {
-  .author-name {
-    display: inline-block;
-    padding: 0 .2em;
-    background: lighten($light-gray-color, 15%)
-  }
-
-  a {
-    @extend .link;
-  }
-
   .container {
     padding-bottom: 0;
-  }
-}
-
-.logo {
-  float: left;
-  margin: 0 0 1em 0;
-  cursor: pointer;
-  letter-spacing: 0.8px;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 300;
-
-  span {
-    font-weight: 700;
-  }
-}
-
-.nav {
-  min-height: 64px;
-}
-
-.navbar {
-  float: right;
-  margin: 0;
-  position: relative;
-  padding: 0;
-  pointer-events: all;
-  cursor: pointer;
-
-  li {
-    display: inline-block;
-    padding: 0 .6em;
+    padding-top: 2.5em;
   }
 
-  a {
-    @extend .link;
+  .lead {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--heading-color);
+    margin-bottom: 1em;
+  }
 
-    &.active {
-      border-bottom: 2px solid $blue-color;
-      font-weight: 700;
+  .intro-cta {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.95rem;
+    padding-left: 1.2em;
+    list-style-type: disc;
+
+    li {
+      margin-bottom: 0.25em;
+    }
+
+    a {
+      @extend .link;
     }
   }
 }
 
 .category-title {
-  margin: 1em 0 0.5em 0;
+  margin: 2em 0 0.5em 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  opacity: 0.4;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 
   &:first-child {
     margin-top: 0;
@@ -141,31 +91,49 @@ hr {
 }
 
 .post-item {
-  margin-bottom: 0.2em;
-  display: block;
+  margin-bottom: 0;
+  display: flex;
+  align-items: baseline;
+  padding: 0.5em 0.25em;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--blockquote-bg);
+  }
 
   a {
-    color: $action-color;
+    color: var(--heading-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--link-color);
+    }
   }
 
   .article-title {
     display: inline-block;
-    width: 85%;
-    //border-bottom: 1px dashed lighten($light-gray-color, 10%);
+    flex: 1;
   }
 
   .date-label {
-    //border: 1px solid lighten($light-gray-color, 10%);
-    padding: 0 0.2em;
-    margin-left: 1em;
-    margin-top: 2px;
-    @extend .pull-right;
+    padding: 0;
+    margin-right: 1.5em;
+    margin-left: 0;
+    color: var(--text-color);
+    opacity: 0.35;
+    font-size: 0.75em;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    min-width: 3.5em;
   }
-
 }
 
 .post-meta {
-  color: $medium-gray-color;
+  color: var(--text-color);
+  opacity: 0.6;
   text-transform: uppercase;
   display: inline-block;
   letter-spacing: 1px;
@@ -176,17 +144,13 @@ hr {
 .post-title {
   margin-top: 0;
   margin-bottom: 1em;
-  color: $dark-gray-color;
+  color: var(--heading-color);
 }
 
 .post-link,
 .post a,
 .page a {
   @extend .link;
-}
-
-.post {
-  @extend .clearfix;
 }
 
 .pagination {
@@ -205,30 +169,51 @@ hr {
 }
 
 .share {
-  border-top: 0.2em dashed lighten($light-gray-color, 13%);
+  border-top: 1px solid var(--border-color);
   padding-top: $base-spacing;
   margin-top: $base-spacing * 2;
 
   p {
-    margin: 0 5em;
-    font-size: rem(14);
-    color: $medium-gray-color;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.6;
   }
 }
 
-.disqus {
-  background-color: lighten($light-gray-color, 16%);
-  padding: $base-spacing 0;
+.author-bio {
+  background: var(--blockquote-bg);
+  border-radius: 8px;
+  padding: 1.5em 2em;
+  margin: 2.5em 0;
 
-  hr {
-    margin: $base-spacing 0;
+  h4 {
+    margin: 0 0 0.75em 0;
+    color: var(--heading-color);
+    font-size: 1rem;
+  }
+
+  p {
+    color: var(--text-color);
+    opacity: 0.85;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .author-links {
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    a {
+      font-size: 0.9rem;
+    }
   }
 }
 
 .site-footer {
-  @extend .clearfix;
-
   padding: $base-spacing 0;
+  margin-top: $base-spacing * 2;
 
   a {
     @extend .link;
@@ -237,11 +222,8 @@ hr {
   small {
     display: block;
     font-size: rem(12);
-    color: darken($medium-gray-color, 10%);
-  }
-
-  .block {
-    display: block;
+    color: var(--text-color);
+    opacity: 0.4;
   }
 }
 
@@ -264,37 +246,22 @@ hr {
 }
 
 .divider {
-  border-top: 0.2em solid lighten($light-gray-color, 13%);
+  border-top: 0.2em solid var(--border-color);
   margin-bottom: $base-spacing * 2;
   margin-top: $base-spacing * 2;
 }
 
-// This applies from 0px to 600px
 @media (max-width: 600px) {
-  .date-label {
-    float: left !important;
-    border: 0 !important;
-    margin-left: -2px !important;
-    margin-top: 2px;
-    margin-right: 1em;
-  }
-
   .post-item {
-    border: 1px solid lighten($light-gray-color, 10%);
-    padding: 0 0.5em;
-    background: lighten($light-gray-color, 15%);
-  }
+    flex-direction: column;
+    padding: 0.4em 0.25em;
 
-  .article-title {
-    border-bottom: none !important;
-  }
-
-  .post-link {
-    &:hover,
-    &:focus,
-    &:active {
-      border-bottom: 2px solid transparent;
-      color: $blue-color;
+    .date-label {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0.15em;
+      font-size: 0.75em;
+      order: -1;
     }
   }
 }

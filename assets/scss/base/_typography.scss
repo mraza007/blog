@@ -1,5 +1,5 @@
 body {
-  color: $base-font-color;
+  color: var(--text-color);
   font-family: $base-font-family;
   //font-feature-settings: "kern", "liga", "pnum";
   font-size: $base-font-size;
@@ -16,28 +16,32 @@ h6 {
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: $small-spacing 0 $small-spacing 0;
-  font-weight: 700;
+  font-weight: 600;
+  color: var(--heading-color);
+  letter-spacing: -0.02em;
 }
 
 h1 {
   font-size: rem(30);
+  font-weight: 700;
 }
 
 h2 {
-  font-size: rem(26);
-}
-
-h3 {
   font-size: rem(24);
 }
 
-h4 {
+h3 {
   font-size: rem(20);
+}
+
+h4 {
+  font-size: rem(18);
 }
 
 h5,
 h6 {
-  font-size: rem(16);
+  font-size: rem(15);
+  letter-spacing: 0;
 }
 
 p {
@@ -50,14 +54,14 @@ p {
 }
 
 a {
-  color: $action-color;
+  color: var(--link-color);
   text-decoration: none;
   transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+    color: var(--link-hover-color);
   }
 }
 
@@ -78,10 +82,10 @@ picture {
 blockquote {
   padding: $base-spacing 0 $base-spacing $base-spacing;
   margin: $base-spacing 0;
-  color: $dark-gray-color;
+  color: var(--text-color);
   line-height: 1.8;
-  border-left: $small-spacing solid $light-gray-color;
-  background-color: lighten($light-gray-color, 15%);
+  border-left: $small-spacing solid var(--blockquote-border);
+  background-color: var(--blockquote-bg);
   p {
     margin: 0;
   }
@@ -91,23 +95,23 @@ code {
   background: none;
   border-radius: 3px;
   border: none;
-  font-family: "SFMono-Regular",Menlo,Consolas,"Inconsolata",monospace;
+  font-family: $code-font-family;
   font-size: 0.9em;
   margin: 0;
   padding: 0 5px;
-  background-color: #f8f8f8;
+  background-color: var(--code-bg);
 }
 
 pre {
   -webkit-overflow-scrolling: touch;
-  font-family: "SFMono-Regular",Menlo,Consolas,"Inconsolata",monospace;
-  font-size: 0.9em;
-  margin: 0 0 1.5em 0;
+  font-family: $code-font-family;
+  font-size: 0.85em;
+  line-height: 1.5;
+  margin: 0 0 1.25em 0;
   overflow: auto;
-  padding: 1em;
-  background: #f8f8f8;
-  border: 1px solid #e8e8e8;
-  border-radius: 3px;
+  padding: 0.85em 1em;
+  background: var(--code-bg);
+  border-radius: 8px;
 
   code {
     background: none;
@@ -130,7 +134,11 @@ dl {
     margin-top: 0;
     margin-left: 1.2em;
     margin-bottom: 1rem;
-    list-style-type: square;
+    list-style-type: disc;
     list-style-position: outside;
     list-style-image: none;
+}
+
+ol {
+    list-style-type: decimal;
 }
