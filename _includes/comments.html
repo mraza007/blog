@@ -2,13 +2,17 @@
 <aside id="comments">
   <div class="container">
     <h3>Comments</h3>
-    <script src="https://utteranc.es/client.js"
-            repo="mraza007/blog"
-            issue-term="pathname"
-            theme="github-light"
-            label="comment"
-            crossorigin="anonymous"
-            async>
+    <script>
+      var utterancesTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'github-dark' : 'github-light';
+      var script = document.createElement('script');
+      script.src = 'https://utteranc.es/client.js';
+      script.setAttribute('repo', 'mraza007/blog');
+      script.setAttribute('issue-term', 'pathname');
+      script.setAttribute('theme', utterancesTheme);
+      script.setAttribute('label', 'comment');
+      script.setAttribute('crossorigin', 'anonymous');
+      script.async = true;
+      document.getElementById('comments').querySelector('.container').appendChild(script);
     </script>
   </div>
 </aside>
