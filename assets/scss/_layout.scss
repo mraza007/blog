@@ -69,12 +69,6 @@ hr {
   }
 }
 
-.site-header {
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: $small-spacing;
-  min-height: 30px;
-}
-
 .intro {
   .author-name {
     display: inline-block;
@@ -88,47 +82,6 @@ hr {
 
   .container {
     padding-bottom: 0;
-  }
-}
-
-.logo {
-  float: left;
-  margin: 0 0 1em 0;
-  cursor: pointer;
-  letter-spacing: 0.8px;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 300;
-
-  span {
-    font-weight: 700;
-  }
-}
-
-.nav {
-  min-height: 64px;
-}
-
-.navbar {
-  float: right;
-  margin: 0;
-  position: relative;
-  padding: 0;
-  pointer-events: all;
-  cursor: pointer;
-
-  li {
-    display: inline-block;
-    padding: 0 .6em;
-  }
-
-  a {
-    @extend .link;
-
-    &.active {
-      border-bottom: 2px solid var(--link-color);
-      font-weight: 700;
-    }
   }
 }
 
