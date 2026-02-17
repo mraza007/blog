@@ -39,14 +39,11 @@ a {
 // Update code highlighting
 .highlight {
   background-color: var(--code-bg);
-  border: 1px solid var(--border-color);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease;
 
-  pre,
-  code {
+  pre {
     background-color: var(--code-bg);
     color: var(--code-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .gutter {
