@@ -133,7 +133,11 @@ hr {
 }
 
 .category-title {
-  margin: 1em 0 0.5em 0;
+  margin: 2.5em 0 0.75em 0;
+  font-size: rem(20);
+  font-weight: 700;
+  color: var(--heading-color);
+  letter-spacing: -0.01em;
 
   &:first-child {
     margin-top: 0;
@@ -141,27 +145,39 @@ hr {
 }
 
 .post-item {
-  margin-bottom: 0.2em;
-  display: block;
+  margin-bottom: 0;
+  display: flex;
+  align-items: baseline;
+  padding: 0.5em 0.25em;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--blockquote-bg);
+  }
 
   a {
     color: var(--heading-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--link-color);
+    }
   }
 
   .article-title {
     display: inline-block;
-    width: 85%;
-    //border-bottom: 1px dashed var(--border-color);
+    flex: 1;
   }
 
   .date-label {
-    //border: 1px solid var(--border-color);
-    padding: 0 0.2em;
-    margin-left: 1em;
-    margin-top: 2px;
-    @extend .pull-right;
+    padding: 0;
+    margin-left: 1.5em;
+    color: var(--text-color);
+    opacity: 0.5;
+    font-size: 0.85em;
+    white-space: nowrap;
   }
-
 }
 
 .post-meta {
@@ -272,32 +288,16 @@ hr {
   margin-top: $base-spacing * 2;
 }
 
-// This applies from 0px to 600px
 @media (max-width: 600px) {
-  .date-label {
-    float: left !important;
-    border: 0 !important;
-    margin-left: -2px !important;
-    margin-top: 2px;
-    margin-right: 1em;
-  }
-
   .post-item {
-    border: 1px solid var(--border-color);
-    padding: 0 0.5em;
-    background: var(--blockquote-bg);
-  }
+    flex-direction: column;
+    padding: 0.4em 0.25em;
 
-  .article-title {
-    border-bottom: none !important;
-  }
-
-  .post-link {
-    &:hover,
-    &:focus,
-    &:active {
-      border-bottom: 2px solid transparent;
-      color: var(--link-color);
+    .date-label {
+      margin-left: 0;
+      margin-bottom: 0.1em;
+      font-size: 0.8em;
+      order: -1;
     }
   }
 }
