@@ -29,12 +29,12 @@ body {
 }
 
 body {
-  background-color: $base-background-color;
+  background-color: var(--bg-color);
 }
 
 hr {
   border-top: none;
-  border-bottom: 2px solid lighten($light-gray-color, 7%);
+  border-bottom: 2px solid var(--border-color);
   width: 100%;
   margin: $small-spacing 0;
 }
@@ -56,7 +56,7 @@ hr {
 }
 
 .link {
-  color: $blue-color;
+  color: var(--link-color);
   padding-bottom: .05em;
   border-bottom: 2px solid transparent;
 
@@ -65,12 +65,12 @@ hr {
   &:hover,
   &:focus,
   &:active {
-    border-bottom: 2px solid $blue-color;
+    border-bottom: 2px solid var(--link-color);
   }
 }
 
 .site-header {
-  border-bottom: 1px solid lighten($light-gray-color, 5%);
+  border-bottom: 1px solid var(--border-color);
   margin-bottom: $small-spacing;
   min-height: 30px;
 }
@@ -79,7 +79,7 @@ hr {
   .author-name {
     display: inline-block;
     padding: 0 .2em;
-    background: lighten($light-gray-color, 15%)
+    background: var(--blockquote-bg);
   }
 
   a {
@@ -126,7 +126,7 @@ hr {
     @extend .link;
 
     &.active {
-      border-bottom: 2px solid $blue-color;
+      border-bottom: 2px solid var(--link-color);
       font-weight: 700;
     }
   }
@@ -145,17 +145,17 @@ hr {
   display: block;
 
   a {
-    color: $action-color;
+    color: var(--heading-color);
   }
 
   .article-title {
     display: inline-block;
     width: 85%;
-    //border-bottom: 1px dashed lighten($light-gray-color, 10%);
+    //border-bottom: 1px dashed var(--border-color);
   }
 
   .date-label {
-    //border: 1px solid lighten($light-gray-color, 10%);
+    //border: 1px solid var(--border-color);
     padding: 0 0.2em;
     margin-left: 1em;
     margin-top: 2px;
@@ -165,7 +165,8 @@ hr {
 }
 
 .post-meta {
-  color: $medium-gray-color;
+  color: var(--text-color);
+  opacity: 0.6;
   text-transform: uppercase;
   display: inline-block;
   letter-spacing: 1px;
@@ -176,7 +177,7 @@ hr {
 .post-title {
   margin-top: 0;
   margin-bottom: 1em;
-  color: $dark-gray-color;
+  color: var(--heading-color);
 }
 
 .post-link,
@@ -205,19 +206,20 @@ hr {
 }
 
 .share {
-  border-top: 0.2em dashed lighten($light-gray-color, 13%);
+  border-top: 0.2em dashed var(--border-color);
   padding-top: $base-spacing;
   margin-top: $base-spacing * 2;
 
   p {
     margin: 0 5em;
     font-size: rem(14);
-    color: $medium-gray-color;
+    color: var(--text-color);
+    opacity: 0.6;
   }
 }
 
 .disqus {
-  background-color: lighten($light-gray-color, 16%);
+  background-color: var(--blockquote-bg);
   padding: $base-spacing 0;
 
   hr {
@@ -237,7 +239,8 @@ hr {
   small {
     display: block;
     font-size: rem(12);
-    color: darken($medium-gray-color, 10%);
+    color: var(--text-color);
+    opacity: 0.6;
   }
 
   .block {
@@ -264,7 +267,7 @@ hr {
 }
 
 .divider {
-  border-top: 0.2em solid lighten($light-gray-color, 13%);
+  border-top: 0.2em solid var(--border-color);
   margin-bottom: $base-spacing * 2;
   margin-top: $base-spacing * 2;
 }
@@ -280,9 +283,9 @@ hr {
   }
 
   .post-item {
-    border: 1px solid lighten($light-gray-color, 10%);
+    border: 1px solid var(--border-color);
     padding: 0 0.5em;
-    background: lighten($light-gray-color, 15%);
+    background: var(--blockquote-bg);
   }
 
   .article-title {
@@ -294,7 +297,7 @@ hr {
     &:focus,
     &:active {
       border-bottom: 2px solid transparent;
-      color: $blue-color;
+      color: var(--link-color);
     }
   }
 }
