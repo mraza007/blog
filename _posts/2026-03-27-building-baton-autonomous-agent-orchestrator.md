@@ -11,7 +11,9 @@ I have too many issues and not enough time. Same as everyone. The usual loop is:
 
 Coding agents help with this. I can point Claude Code at an issue and let it work while I do something else. But that's still one agent, one issue, one terminal. If I have 10 issues labeled "agent-ready," I'm not babysitting 10 terminal tabs.
 
-I wanted something that just watches for new issues and sends agents after them. So I built [Baton](https://github.com/mraza007/baton).
+I wanted something that just watches for new issues and sends agents after them. Then OpenAI released their [Symphony spec](https://github.com/openai/symphony/blob/main/SPEC.md), an orchestrator pattern for their Codex agent. The architecture was solid: poll an issue tracker, dispatch agents into isolated workspaces, reconcile when issues close. But it was built around Codex and Linear, and I use Claude Code and GitHub Issues.
+
+So I took the ideas I liked from Symphony and built my own. That's [Baton](https://github.com/mraza007/baton).
 
 ## What it does
 
@@ -189,4 +191,10 @@ The code is at [github.com/mraza007/baton](https://github.com/mraza007/baton). M
 - Cost tracking per issue, so I can see what automating the backlog actually costs in tokens
 - More trackers besides GitHub Issues (Linear, Jira, GitLab)
 
+If you've got a repo with a pile of issues sitting there, try pointing Baton at it. Start with one label and `max_concurrent: 1`. See what it does. The setup takes about five minutes and the worst case is you get a bad PR that you close. The code is MIT licensed, the whole thing is ten files, and there's nothing weird in it. Fork it, break it, rip out the parts you don't like.
+
 If you try it, I want to hear what breaks.
+
+---
+
+I write a newsletter called [Dev Console](https://devconsole.substack.com/) where I cover what's actually happening in AI, minus the hype. New tools, real use cases, stuff I'm building. If this post was interesting, you'll probably like it.
