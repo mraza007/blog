@@ -120,68 +120,35 @@ return "no_pr"
 
 Small change, but it meant the orchestrator stopped wasting time on finished work.
 
-## Verification with agent-browser
+## Extensibility through skills and MCP servers
 
-Writing code and knowing it works are different problems. I added [agent-browser](https://github.com/vercel-labs/agent-browser) to the workflow so the agent actually tests its own work before opening a PR.
+Baton itself is deliberately simple. It polls, dispatches, and manages worktrees. The interesting part is what you put in the prompt and what tools you give the agent.
 
-The prompt tells the agent to spin up a local server and poke around:
+Claude Code supports MCP servers, which means you can wire up external tools and the agent can use them during its run. Baton passes MCP server config through to each worker:
 
 ```yaml
----
-tracker:
-  kind: github
-  labels: [baton]
 agent:
-  max_concurrent: 1
-  max_turns: 3
-  command: claude
-  permission_mode: bypassPermissions
----
-
-You are an autonomous software engineer working on issue #{{ "{{" }} issue.number {{ "}}" }}.
-
-{{ "{{" }} issue.body {{ "}}" }}
-
-## Verification (REQUIRED before creating PR)
-
-Use agent-browser to verify your work:
-  agent-browser open http://localhost:3456
-  agent-browser snapshot -i
-  agent-browser click, fill, type to test interactions
-
-If verification fails, fix the issues before proceeding.
+  mcp_servers:
+    - name: playwright
+      command: npx @playwright/mcp@latest
 ```
 
-The agent starts `npx serve`, opens the page with agent-browser, clicks buttons, fills inputs, takes snapshots, and includes the results in the PR description. Not a replacement for real tests, but it catches the obvious stuff. "I wrote a component and it doesn't even render" is no longer a class of failure that makes it to PR.
+That means the agent has access to a headless browser while it works. It can open a page, click around, take screenshots, verify that the UI renders correctly. You don't have to build that into Baton. You just declare which MCP servers you want and the agent figures out when to use them.
 
-## Building a todo app with zero intervention
+Same idea with CLI tools. If [agent-browser](https://github.com/vercel-labs/agent-browser) is installed on the machine, you can tell the agent to use it in the prompt template. "Before creating a PR, open the app with agent-browser and verify the acceptance criteria." The agent spins up a local server, opens the page, clicks buttons, fills inputs, takes snapshots. All from instructions in WORKFLOW.md, nothing hardcoded in the orchestrator.
 
-I tested this by having Baton build a todo app from scratch. Fresh repo. Three GitHub issues labeled `baton`:
+Claude Code also has skills, which are reusable prompt fragments that teach the agent specific capabilities. If you have a code review skill or a testing skill installed, the agent can use them during its run. Baton's config supports a `skills` list for this:
 
-1. Create basic HTML structure
-2. Add JavaScript for create/delete
-3. Add localStorage persistence
+```yaml
+agent:
+  skills:
+    - code-reviewer
+    - accessibility-checker
+```
 
-I ran `baton start` and went to make coffee.
+You can also override skills per issue by adding a `## Skills` section to the issue body. If one issue needs Playwright but the others don't, just add it to that issue.
 
-When I came back, all three issues had PRs. Each one included verification output:
-
-> Opened `http://localhost:3456` and confirmed the page renders correctly.
-> Ran `agent-browser snapshot -i` confirming interactive elements: textbox and button.
-
-I merged the PRs. The issues auto-closed. The app worked. I didn't write any of it.
-
-Nobody is shipping this todo app to production. That was never the point. I wanted to know if an orchestrator could watch a backlog and ship working code without me in the loop. It can.
-
-## Stuff that bit me
-
-`baton/issue-42` as a branch name tells you nothing. I stared at `git branch` output for a while before adding slugification. `baton/fix-login-redirect-42` is barely more work to generate and much less annoying to read.
-
-I also wasted a few restarts before I added config hot-reload. Every time I tweaked the prompt I'd kill the daemon, lose running state, and start over. Now Baton rereads `WORKFLOW.md` every poll cycle so prompt changes take effect on the next dispatch.
-
-I briefly thought about running one Baton instance across multiple repos. That fell apart fast. Repos have different workflows, different hooks, different concurrency limits. One instance per repo, started from the project directory. Boring, but it works.
-
-One more: don't crank `max_concurrent` to 10 unless your machine has RAM to spare. Each Claude Code process is not small. I run 1-3 and that's plenty.
+The point is that Baton doesn't need to know about browsers or test runners or linters. It just needs to dispatch agents with the right config. The prompt and the tools do the rest.
 
 ## Getting started
 
