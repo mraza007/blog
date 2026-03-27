@@ -150,6 +150,25 @@ You can also override skills per issue by adding a `## Skills` section to the is
 
 The point is that Baton doesn't need to know about browsers or test runners or linters. It just needs to dispatch agents with the right config. The prompt and the tools do the rest.
 
+## Putting it together: a todo app from scratch
+
+To see all of this working end to end, I had Baton build a todo app. Fresh repo, no code. I created three GitHub issues labeled `baton`:
+
+1. Create basic HTML structure
+2. Add JavaScript for create/delete
+3. Add localStorage persistence
+
+The WORKFLOW.md prompt told the agent to use agent-browser for verification before opening PRs. I ran `baton start` and went to make coffee.
+
+Baton picked up issue #1, created a worktree on `baton/create-basic-todo-app-html-structure-1`, and dispatched Claude Code. The agent wrote `index.html`, spun up a local server with `npx serve`, opened it with agent-browser, confirmed the layout rendered, then committed, pushed, and opened a PR. The PR description included what agent-browser found:
+
+> Opened `http://localhost:3456` and confirmed the page renders correctly.
+> Ran `agent-browser snapshot -i` confirming interactive elements: textbox and button.
+
+I merged it. The issue auto-closed (the PR had `Closes #1`). Baton saw the issue was gone on the next poll, released the slot, and picked up issue #2. Same cycle. Then #3.
+
+Three issues, three PRs, three merges. I didn't write a line of the todo app. The agent-browser verification wasn't built into Baton. It was just instructions in the prompt and a CLI tool on my machine.
+
 ## Getting started
 
 ```bash
