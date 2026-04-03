@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Building CodeWiki: Compiling Codebases Into Living Wikis"
-description: "Coding agents understand code but forget that understanding between sessions. I built CodeWiki — a Rust CLI that compiles codebases into structured markdown wikis maintained by your AI agent. Here's how it works."
-keywords: "codewiki, code wiki, llm knowledge base, codebase understanding, claude code, coding agents, obsidian, qmd, rust cli, session persistence"
-tags: [ai, rust, tools]
+title: "Building CodeWiki: Compiling Codebases Into Living Wikis With LLMs"
+description: "Every AI coding agent session starts from zero. I built CodeWiki, a Rust CLI that compiles codebases into structured markdown wikis your agent maintains across sessions. No RAG, no embeddings, just compiled understanding."
+keywords: "codewiki, llm knowledge base, ai coding agent memory, codebase wiki, claude code tools, coding agent persistence, obsidian code wiki, qmd search, rust cli tool, karpathy knowledge base, code understanding llm, rag alternative"
+tags: [ai, rust, tools, devops]
 comments: true
 ---
 
