@@ -1,13 +1,14 @@
 <!-- Lazy Loading for Images -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Add lazy loading to all images in post content
+    /* Add lazy loading + async decoding to all images in post content.
+       Note: use block comments only — the compress layout strips newlines,
+       so a // comment would swallow the rest of this script. */
     var images = document.querySelectorAll('.post-content img, article img');
     for (var i = 0; i < images.length; i++) {
         if (!images[i].hasAttribute('loading')) {
             images[i].setAttribute('loading', 'lazy');
         }
-        // Add decoding async for better performance
         if (!images[i].hasAttribute('decoding')) {
             images[i].setAttribute('decoding', 'async');
         }
