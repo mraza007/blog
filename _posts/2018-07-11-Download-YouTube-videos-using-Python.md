@@ -61,4 +61,4 @@ python3 app.py
 
 Checkout my videodownloader script that was written using python and pytube by me and my friend [videodownloader](https://github.com/mraza007/videodownloader)
 
-Follow me on [twitter](http://twitter.com/muhammad_o7) for more updates and feel free to dm if you have any questions. <3
+Follow me on [twitter](https://twitter.com/muhammad_o7) for more updates and feel free to dm if you have any questions. <3

@@ -17,7 +17,7 @@ It is a web framework that allows us to build web apps rapidly without inventing
 
 - In order to get started with `django` make sure we have `python` and `pip` installed.
 
-- Once we have `python` and `pip` now we can install `pipenv` that will allow us to manage project dependencies. So in order to install `pipenv` you can refer to the documentation. [Pipenv](https://pipenv.kennethreitz.org/en/latest/).
+- Once we have `python` and `pip` now we can install `pipenv` that will allow us to manage project dependencies. So in order to install `pipenv` you can refer to the documentation. [Pipenv](https://pipenv.pypa.io/en/latest/).
 
 - Now we have `pipenv` , we can now create project folder where we will be installing django. In order to install `django`, first we need to activate our virtual enviroment using this command `pipenv shell` once we have shell activated now we can run this command `pipenv install django` to install `django`.
 

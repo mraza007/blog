@@ -7,7 +7,7 @@ tags: [ai, devops, automation]
 comments: true
 ---
 
-I've written before about how [AI agents are just CI pipelines with an LLM plugged in](https://muhammadrazame.github.io/blog/2026/01/03/ai-agents-devops-perspective). That post mapped agent concepts to infrastructure patterns you already know. But there's a discipline forming around the infrastructure side of agents that deserves its own name.
+I've written before about how [AI agents are just CI pipelines with an LLM plugged in](/2026/ai-agents-devops-perspective/). That post mapped agent concepts to infrastructure patterns you already know. But there's a discipline forming around the infrastructure side of agents that deserves its own name.
 
 Harness engineering. It's the practice of building everything around the LLM — the execution environment, tool definitions, safety boundaries, observability, and lifecycle management. The stuff that turns a chatbot into a production system.
 

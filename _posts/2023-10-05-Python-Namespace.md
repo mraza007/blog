@@ -133,6 +133,6 @@ Happy Coding!
 _If you loved this post, you can always support my work by [buying me a coffee](https://www.buymeacoffee.com/mraza007). your support would mean the world to me! Also, if you end up sharing this on Twitter, definitely tag me [@muhammad_o7](https://twitter.com/muhammad_o7)._
 
 
-You can now also book 30 min call with me [here](https://calendly.com/mraza007/30min). I would love to talk to you or if you have any Open Source project you would like me to contribute to.
+You can now also book 30 min call with me [here](https://calendly.com/muhammad-07/30-minute-meeting). I would love to talk to you or if you have any Open Source project you would like me to contribute to.
 
 **Note: If you like to be notified about the upcoming posts you can subscribe to the RSS or you can leave your email [here](https://forms.gle/M1EK61LLCxJ3iTiD7)**
