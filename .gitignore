@@ -1,3 +1,6 @@
 .sass-cache/
 Gemfile.lock
 _site/
+.env
+.ahrefs-key
+.DS_Store
