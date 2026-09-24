@@ -1,89 +1,183 @@
 ---
 layout: post
-title: "Email Testing with Python's smtpd Module"
-description: "In this post, we will dive deep into python smtpd module and explore its capabilities and how it can used for local testing"
-keywords: "linux unix python programing python3 smtp emails"
+title: "Python smtpd Was Removed in 3.12: How to Test Emails Locally with aiosmtpd"
+description: "The smtpd module was removed in Python 3.12, so python -m smtpd -n -c DebuggingServer no longer works. Here is the aiosmtpd replacement: a one-line local SMTP debug server, plus a pytest fixture that catches emails in your tests."
+keywords: "python smtpd removed 3.12, python smtpd deprecated, aiosmtpd, python local smtp server for testing, python test smtp server, smtpd DebuggingServer replacement, python test email, pytest email testing"
 tags: [python]
 comments: true
 ---
 
-As a seasoned Python developer, I am planning to start a new blog series where I will be covering different Python command-line modules which come pre-installed with your Python installation. In this blog, we will be looking into the Python `smtpd` module, which allows you to run your own local `SMTP` server for email testing.
+_Updated September 2026. The original version of this post used the `smtpd` module. Python 3.12 removed that module, so I rewrote the post for `aiosmtpd`._
+
+If you run `python -m smtpd` on Python 3.12 or later, you get this:
+
+```text
+/usr/bin/python3: No module named smtpd
+```
+
+The `smtpd` module was deprecated in Python 3.6 and removed in Python 3.12 ([PEP 594](https://peps.python.org/pep-0594/)). The official replacement is [`aiosmtpd`](https://aiosmtpd.aio-libs.org/), an asyncio-based SMTP server from the aio-libs project. It is a `pip install` away, and it has the same "print every email to the terminal" mode that made `smtpd` useful for local testing.
+
+The short version:
+
+```bash
+# Old (Python 3.11 and earlier)
+python -m smtpd -n -c DebuggingServer localhost:1025
+
+# New (Python 3.12 and later)
+pip install aiosmtpd
+python -m aiosmtpd -n -l localhost:1025
+```
+
+The rest of this post shows the new command, a script to send a test email, and a pytest fixture that lets your tests check the emails your code sends.
+
+## Why a local SMTP server?
+
+When your app sends email (sign-up confirmations, password resets, alerts), you do not want to send real email while you develop. A local SMTP server accepts the message on your machine and prints it. Nothing leaves your laptop, and you see exactly what your code sent: headers, body, and recipients.
+
+## Step 1: Start the debug server
+
+Install `aiosmtpd` in your virtual environment:
+
+```bash
+pip install aiosmtpd
+```
+
+Start the server:
+
+```bash
+python -m aiosmtpd -n -l localhost:1025
+```
+
+What the options do:
+
+- `-n`: Do not try to switch to the `nobody` user. The server tries this by default, and it fails when you are not root. The old `smtpd` command had the same flag.
+- `-l localhost:1025`: The host and port to listen on. Without this flag, `aiosmtpd` listens on `localhost:8025`.
+
+You do not need a `-c` flag. The default handler is `aiosmtpd.handlers.Debugging`, which is the replacement for the old `DebuggingServer` class. It prints every message to the terminal.
+
+## Step 2: Send a test email
+
+Save this as `send_email.py`:
+
+```python
+import smtplib
+from email.message import EmailMessage
+
+msg = EmailMessage()
+msg["Subject"] = "Test Email"
+msg["From"] = "testing_email@xyz.com"
+msg["To"] = "recipient_test@abc.com"
+msg.set_content("This is a test email\nHello World")
+
+with smtplib.SMTP("localhost", 1025) as server:
+    server.send_message(msg)
+```
+
+`smtplib` is still in the standard library. Only the server side moved to a separate package. The script uses `EmailMessage`, the modern API in the `email` package, and a `with` block so that the connection closes even when sending fails.
+
+Run it:
+
+```bash
+python send_email.py
+```
+
+The terminal that runs the server prints the message:
+
+```text
+---------- MESSAGE FOLLOWS ----------
+Subject: Test Email
+From: testing_email@xyz.com
+To: recipient_test@abc.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+X-Peer: ('::1', 51530, 0, 0)
+
+This is a test email
+Hello World
+------------ END MESSAGE ------------
+```
+
+If you used the old `DebuggingServer`, you will notice one change. The old server printed every line as a bytes literal (`b'Subject: Test Email'`). `aiosmtpd` prints plain text.
+
+## Step 3: Catch emails in your tests
+
+The terminal output is fine when you test by hand. In automated tests, you want to assert on the email itself. `aiosmtpd` includes a `Controller` that runs the server in a background thread, so you can start and stop it from a pytest fixture.
+
+```python
+import smtplib
+from email.message import EmailMessage
+
+import pytest
+from aiosmtpd.controller import Controller
+from aiosmtpd.handlers import Message
 
 
-The `smtpd` module, short for **Simple Mail Transfer Protocol Daemon**, allows developers to set up and run their own local SMTP server. This functionality is particularly useful for testing email-related features during development. Rather than relying on external email servers, developers can take advantage of smtpd to simulate email transactions in a local environment.
+class Inbox(Message):
+    def __init__(self):
+        super().__init__()
+        self.messages = []
 
-It's part of Python's standard library, making it readily available for use in any Python project without the need for installing additional dependencies. At its core, this module provides a simple and lightweight implementation of an SMTP (Simple Mail Transfer Protocol) server. SMTP is the protocol used for transmitting electronic mail over the internet, and the smtpd module allows developers to create their own custom SMTP servers.
+    def handle_message(self, message):
+        self.messages.append(message)
 
 
-### Setting up `smtpd` server.
+@pytest.fixture
+def inbox():
+    handler = Inbox()
+    controller = Controller(handler, hostname="localhost", port=1025)
+    controller.start()
+    yield handler
+    controller.stop()
 
-In order to run `smtpd` server locally you need to perform the following steps, 
 
-1. **Open a Terminal and run the following command**
+def send_welcome_email(to):
+    msg = EmailMessage()
+    msg["Subject"] = "Welcome"
+    msg["From"] = "app@example.com"
+    msg["To"] = to
+    msg.set_content("Thanks for signing up.")
+    with smtplib.SMTP("localhost", 1025) as server:
+        server.send_message(msg)
+
+
+def test_welcome_email(inbox):
+    send_welcome_email("new_user@example.com")
+
+    assert len(inbox.messages) == 1
+    email = inbox.messages[0]
+    assert email["To"] == "new_user@example.com"
+    assert email["Subject"] == "Welcome"
+    assert "Thanks for signing up." in email.get_payload()
+```
+
+```bash
+$ pytest -q test_email.py
+.                                                                        [100%]
+1 passed in 0.05s
+```
+
+How it works:
+
+- `Message` is a handler in `aiosmtpd` that parses each incoming email into an `email.message.Message` object. The `Inbox` subclass keeps each parsed message in a list.
+- `controller.start()` does not return until the server accepts connections, so the test does not need a sleep.
+- `controller.stop()` shuts the server down after the test, so the port is free for the next test.
+
+In a real project, `send_welcome_email` is your application code. Point its SMTP host and port at `localhost:1025` in your test settings.
+
+## If you are still on Python 3.11 or earlier
+
+The old command still works on those versions:
 
 ```bash
 python -m smtpd -n -c DebuggingServer localhost:1025
 ```
 
-Breakdown of the command options:
+It prints a `DeprecationWarning` on 3.10 and 3.11. I still recommend `aiosmtpd`, because the same command then works when you upgrade.
 
-- `-n`: Prevents the server from attempting to verify the existence of the sender's email address. (since we are testing with random email addresses).
-- `-c DebuggingServer`: Specifies the class to be used for the SMTP server, in this case, DebuggingServer as we are testing email functionality.
-- `localhost:1025` : Sets the address and port on which the server will listen. You can choose a different port if needed.
+## Conclusion
 
-Now this command while run our smtp server locally which we can use to test emails.
-
-### Writing a simple `python` script.
-
-Once we have `smtpd` running, we can write a simple script to test it. 
-
-```python
-import smtplib
-from email.mime.text import MIMEText
-
-# Set up the email content
-subject = "Test Email"
-body = "This is a test email\n Hello World"
-sender_email = "testing_email@xyz.com"
-receiver_email = "recipient_test@abc.com"
-
-message = MIMEText(body)
-message["Subject"] = subject
-message["From"] = sender_email
-message["To"] = receiver_email
-
-# Connect to the local SMTP server
-server = smtplib.SMTP("localhost", 1025)
-
-# Send the email
-server.sendmail(sender_email, [receiver_email], message.as_string())
-
-# Disconnect from the server
-server.quit()
-```
-
-After creating that script you can simply run it. Once you run it you should see the following output on terminal where your `smtpd` command is running.
-
-```bash
----------- MESSAGE FOLLOWS ----------
-b'Content-Type: text/plain; charset="us-ascii"'
-b'MIME-Version: 1.0'
-b'Content-Transfer-Encoding: 7bit'
-b'Subject: Test Email'
-b'From: testing_email@xyz.com'
-b'To: recipient_test@abc.com'
-b'X-Peer: ::1'
-b''
-b'This is a test email'
-b' Hello World'
------------- END MESSAGE ------------
-```
-
-### Conclusion
-
-Python is an awesome language, and it comes with lots of powerful command-line modules preinstalled. I hope you had a chance to learn something new! In future blog posts I will be covering more of these preinstalled command-line modules. If you have any feedback, please feel free to leave a comment below. If you prefer not to comment publicly, you can always send me an [email](mailto:muhammadraza0047@gmail.com).
-
-Lastly, I have an exciting announcement about my [YouTube channel](https://www.youtube.com/@mr_o47). I launched this channel last year, but unfortunately, due to some personal reasons, I haven't been very active on it. Your support means a lot to me, so I would genuinely appreciate it if you could subscribe. Keep an eye out for upcoming content on my YouTube channel – there's more to come!
+The fix for the missing `smtpd` module is one package and one changed command: `pip install aiosmtpd`, then `python -m aiosmtpd -n -l localhost:1025`. For tests, the `Controller` class gives you an in-process inbox that you can assert on. If you have any feedback, leave a comment below. If you prefer not to comment publicly, you can always send me an [email](mailto:muhammadraza0047@gmail.com).
 
 **If you like to be notified about the upcoming posts you can subscribe to the RSS or you can leave your email [here](https://forms.gle/M1EK61LLCxJ3iTiD7)**
 
