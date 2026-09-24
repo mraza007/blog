@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "GGUF vs MLX: A Decision Guide, Not Another Benchmark"
-description: "If you run local LLMs on a Mac, you keep getting asked to choose between a GGUF file and an MLX build of the same model. Here is how to actually decide, in five questions, without trusting a tokens-per-second counter that lies."
-keywords: "gguf vs mlx, mlx quantization, gguf quantization, local llm mac, apple silicon llm, q4_k_m, mlx vs llama.cpp, local llm inference, quantization formats, ollama lm studio mlx"
+title: "GGUF vs MLX on Mac (Apple Silicon): Which Format to Pick"
+description: "GGUF or MLX for local LLMs on a Mac? Short answer: GGUF is the safe default. Pick MLX for long outputs, single-user chat, or on-device fine-tuning on Apple Silicon. Five questions decide it, and tokens per second is not one of them."
+keywords: "gguf vs mlx, mlx vs gguf, gguf vs mlx mac, gguf vs mlx apple silicon, lm studio gguf vs mlx, is mlx faster than gguf, mlx quantization, gguf quantization, local llm mac, q4_k_m, mlx vs llama.cpp"
 tags: [ai, llm, devops, mac]
 comments: true
 ---
+
+**Short answer:** On a Mac, pick **GGUF** by default. It runs everywhere, every new model gets a GGUF build first, and it is faster for agents and RAG, where the prompt is long and the reply is short. Pick **MLX** when you stay on Apple Silicon and one of these is true: your replies are long (chat, summaries, writing), the model is small (under about 14B), or you want to fine-tune on the Mac. For large models that fill most of your RAM, speed is about the same in both formats, because memory bandwidth sets the limit. [Skip to the flowchart](#the-flowchart), or read on for the reasons.
 
 Every few weeks someone downloads the GGUF build and the MLX build of the same model, runs both, screenshots the tokens-per-second counter, and posts it as proof that one format wins. The replies split down the middle. Half the thread says MLX is obviously faster, the other half says the test was rigged.
 

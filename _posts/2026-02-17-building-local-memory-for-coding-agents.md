@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "I Built Local Memory for Coding Agents Because They Keep Forgetting Everything"
-description: "Coding agents forget everything between sessions. I built EchoVault — an MCP server that gives agents persistent memory using SQLite, Markdown, and zero cloud dependencies. Here's how it works and why I built it."
-keywords: "coding agent memory, mcp server, claude code memory, cursor memory, codex memory, local first ai tools, agent persistence, echovault, sqlite fts5, obsidian compatible"
+title: "Persistent Local Memory for Claude Code, Codex, and OpenCode"
+description: "Coding agents forget everything between sessions. EchoVault is a local MCP server that gives Claude Code, Codex, Cursor, and OpenCode one shared, persistent memory: SQLite plus an Obsidian-compatible Markdown vault, with no cloud and no API keys."
+keywords: "persistent memory for coding agents, claude code memory, codex memory, opencode memory, codex persistent memory obsidian, opencode obsidian memory, local agent memory, cursor memory, mcp memory server, echovault, sqlite fts5"
 tags: [ai, python, tools]
 comments: true
 ---
